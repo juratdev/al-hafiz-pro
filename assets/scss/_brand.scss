@@ -1,0 +1,48 @@
+/*----------------------------------------*/
+/*  08. Brand
+/*----------------------------------------*/
+.bd-brand-single img {
+    opacity: 0.2;
+}
+.bd-brand-single img:hover {
+    opacity: 1;
+}
+.bd-brand-single {
+    text-align: center;
+}
+.bd-brand-item.text-center {
+    @media #{$xs} {
+        text-align: start !important;
+    }
+}
+
+
+// brand style four start here
+.bd-brand-area-four-title {
+    position: relative;
+    h4 {
+        font-size: 24px;
+        margin-bottom: 0px;
+        line-height: 1;
+        font-weight: 600;
+        display: inline-block;
+        padding: 0px 20px;
+        background: var(--clr-common-white);
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        height: 7px;
+        width: 100%;
+        top: 10px;
+        left: 0px;
+        border-top: 1px solid var(--clr-border-4);
+        border-bottom: 1px solid var(--clr-border-4);
+        z-index: -1;
+    }
+}
+.bd-brand-area-four.pb-150 {
+    @media #{$xs} {
+        padding-bottom: 145px;
+    }
+}

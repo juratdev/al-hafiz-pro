@@ -1,0 +1,103 @@
+/*----------------------------------------*/
+/*  15. Pricing
+/*----------------------------------------*/
+
+.bd-pricing {
+    background: var(--clr-common-white);
+    padding: 45px 50px 50px 50px;
+    @include transition(0.3s);
+    border-radius: 5px;
+    @media #{$lg,$md,$xxs} {
+        padding: 45px 25px 50px 25px;
+    }
+    &-subtitle {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--clr-body-heading);
+        @include transition(0.3s);
+    }
+    &-price {
+        font-size: 60px;
+        line-height: 1.16;
+        color: var(--clr-theme-1);
+        @include transition(0.3s);
+        span {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--clr-body-heading);
+            @include transition(0.3s);
+        }
+    }
+    ul {
+        li {
+            font-size: 16px;
+            line-height: 1;
+            list-style: none;
+            margin-bottom: 20px;
+            @include transition(0.3s);
+            i {
+                font-size: 16px;
+                color: var(--clr-theme-1);
+                margin-right: 13px;
+                @include transition(0.3s);
+            }
+        }
+    }
+    &-btn {
+        .theme-btn,
+        .theme-btn-black {
+            width: 100%;
+        }
+    }
+    &.bd-pricing-active {
+        background: var(--clr-theme-1);
+        .bd-pricing-subtitle,
+        .bd-pricing-price,
+        .bd-pricing-price span,
+        ul li,
+        ul li i {
+            color: var(--clr-common-white);
+        }
+        .theme-btn {
+            background: var(--clr-body-heading);
+        }
+    }
+}
+
+.bd-pricing-tabs {
+    display: inline-flex;
+    padding: 5px;
+    background: var(--clr-bg-gray2);
+    border-radius: 30px;
+    @media #{$xs} {
+        margin-bottom: 40px;
+    }
+    & button {
+        height: 50px;
+        line-height: 50px;
+        padding: 0px 30px;
+        background: transparent;
+        display: inline-block;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--clr-body-heading);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        @media #{$md} {
+            padding: 0px 22px;
+        }
+        &:last-child {
+            margin-left: 6px;
+        }
+        &.active {
+            background: var(--clr-theme-1);
+            color: var(--clr-common-white);
+        }
+    }
+}
+.bd-pricing-top {
+    margin-top: -30px;
+    position: relative;
+}

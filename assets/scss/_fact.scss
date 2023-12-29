@@ -1,0 +1,102 @@
+/*----------------------------------------*/
+/*  12. Fact
+/*----------------------------------------*/
+.bd-fact {
+    .bd-fact-subtitle {
+        font-size: 16px;
+        display: block;
+    }
+    &-inner {
+        text-align: center;
+    }
+}
+.bd-fact-title,
+.bd-fact-title .odometer {
+    font-size: 60px;
+    line-height: 1.16;
+    @media #{$lg} {
+        font-size: 50px;
+    }
+    @media #{$md} {
+        font-size: 46px;
+    }
+    @media #{$xs} {
+        font-size: 36px;
+    }
+}
+.bd-fact-about-spacing {
+    @media #{$xl} {
+        padding-top: 170px;
+    }
+    @media #{$lg} {
+        padding-top: 110px;
+    }
+    @media #{$md,$xs} {
+        padding-top: 110px;
+    }
+}
+
+//fact style two
+.bd-slider-facts {
+    ul {
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 60px;
+            @media #{$xs} {
+                margin-right: 20px;
+            }
+            @media #{$xxs} {
+                margin-right: 15px;
+                max-width: 29%;
+            }
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+    .bd-slider-fact-title,
+    .bd-slider-fact-title .odometer-value {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 0px;
+        @media #{$xxs} {
+            font-size: 24px;
+        }
+    }
+    .bd-slider-fact-subtitle {
+        font-size: 16px;
+        @media #{$xxs} {
+            font-size: 12px;
+        }
+    }
+}
+.bd-fact-area.pt-145 {
+    @media #{$xs} {
+        padding-top: 110px;
+    }
+}
+.bd-fact-area-four.pt-105 {
+    @media #{$xs} {
+        padding-top: 110px;
+    }
+}
+.bd-slider-facts-six {
+    ul {
+        li {
+            @media #{$xxs} {
+                max-width: 44%;
+            }
+        }
+    }
+}
+.bd-slider-video-spacing.mb-90 {
+    @media #{$xs} {
+        margin-bottom: 60px;
+    }
+}
+.bd-slider-six-img {
+    @media #{$xs} {
+        margin-top: 70px;
+    }
+}

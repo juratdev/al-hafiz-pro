@@ -1,0 +1,119 @@
+/*----------------------------------------*/
+/*  14. Progress
+/*----------------------------------------*/
+.bd-skill-area .bd-section-title-wrapper p {
+    @media #{$lg} {
+        br {
+            display: none;
+        }
+    }
+}
+.bd-skill-area.pb-135 {
+    @media #{$lg} {
+        padding-bottom: 115px;
+    }
+}
+.bd-skill--title__wrapper {
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & span {
+        color: var(--clr-body-heading);
+    }
+}
+.bd-skill--title {
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+.bd-skill__wrapper {
+    @media #{$lg} {
+        margin-bottom: 20px;
+    }
+    & .progress {
+        height: 8px;
+        border-radius: 10px;
+        overflow: inherit;
+        background-color: #e9ecef;
+        & .progress-bar {
+            background: var(--clr-theme-1);
+            position: relative;
+            overflow: inherit;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            & span {
+                height: 22px;
+                width: 4px;
+                display: inline-block;
+                background: var(--clr-theme-1);
+                position: absolute;
+                transform: rotate(20deg);
+                right: -2px;
+                border-radius: 30px;
+            }
+        }
+    }
+}
+.bd-skill--content {
+	overflow: hidden;
+	padding-bottom: 15px;
+}
+.bd-skill--title__wrapper {
+	margin-bottom: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+.bd-skill--title__wrapper span {
+	color: var(--clr-body-heading);
+	position: absolute;
+	top: 0;
+}
+.bd-skill--content-img {
+    position: relative;
+    @media #{$md,$xs} {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &-expe {
+        position: absolute;
+        left: 42%;
+        transform: translateX(-50%);
+        bottom: 70px;
+        text-align: center;
+        @media #{$xl} {
+            left: 48%;
+        }
+        @media #{$lg} {
+            bottom: 40px;
+            left: 48%;
+        }
+        @media #{$md,$xs} {
+            left: 50%;
+        }
+        @media #{$xxs} {
+            bottom: 25px;
+        }
+        &-title {
+            font-size: 150px;
+            font-weight: 700;
+            color: var(--clr-body-heading);
+            line-height: 1;
+            @media #{$xxs} {
+                font-size: 80px;
+            }
+        }
+        span {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--clr-body-heading);
+            line-height: 1;
+            @media #{$xs} {
+                font-size: 24px;
+            }
+        }
+    }
+}
