@@ -65,12 +65,22 @@ input[type="number"] {
   }
 
   .bd-about-shape-box {
-    margin: 50px 0;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   .bd-team-area {
     padding-top: 15px;
     padding-bottom: 10px;
+  }
+  .bd-pricing-area {
+    padding: 15px;
+  }
+  .bd-pricing-area .bd-section-title-wrapper {
+    margin-bottom: 10px;
+  }
+  .bd-pricing-area .bd-section-title {
+    margin: 0;
   }
 
   .bd-pricing-area .bd-slider-btn {
@@ -81,6 +91,14 @@ input[type="number"] {
   }
   .bd-blog-area .bd-slider-btn {
     margin: 0;
+  }
+
+  .bd-contact-area {
+    padding-bottom: 0;
+  }
+
+  .bd-footer-area {
+    padding: 60px 0 20px 0;
   }
 }
 @media only screen and (max-width: 480px) {
