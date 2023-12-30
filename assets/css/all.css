@@ -13,18 +13,27 @@ input[type="number"] {
 .btn-lang {
   margin: 0 auto;
   text-align: center;
-  padding: 0px 22px;
+  padding: 8px 15px;
+  background-color: #06635d;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 8px;
 }
 @media only screen and (max-width: 1200px) {
   .btn-lang {
     display: none;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .btn-lang-mobil {
-    width: 100%;
     display: flex;
-    padding: 0px 22px;
+    padding: 8px 15px;
+    background-color: #06635d;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
   }
 }
 
@@ -212,4 +221,50 @@ input[type="number"] {
 
 .bd-page-title-area {
   background: #06635d7a;
+}
+
+/* questions */
+
+.questions {
+  background-color: #06635d;
+}
+.questions-box {
+  gap: 170px;
+}
+
+.questions-img {
+  width: 200px;
+  height: auto;
+}
+.questions-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.questions-input {
+  max-width: 300px;
+}
+
+.questions-form {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 781px) {
+  .questions {
+    padding: 40px 0;
+  }
+  .questions-box {
+    text-align: center;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .questions-form {
+    flex-direction: column;
+  }
+
+  .questions-input {
+    max-width: 250px;
+  }
 }
