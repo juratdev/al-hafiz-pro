@@ -88,6 +88,7 @@ input[type="number"] {
     margin: 0;
   }
   .bd-blog-area {
+    padding-top: 50px;
     padding-bottom: 20px;
   }
   .bd-blog-area .bd-slider-btn {
@@ -100,6 +101,10 @@ input[type="number"] {
 
   .bd-footer-area {
     padding: 60px 0 20px 0;
+  }
+
+  .bd-page-title-area {
+    padding: 50px 0 30px 0;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -202,4 +207,8 @@ input[type="number"] {
 
 .cards-link > div > img {
   width: 100%;
+}
+
+.bd-page-title-area {
+  background: #06635d7a;
 }
