@@ -371,47 +371,6 @@ $(".popup-video").magnificPopup({
 		  });
 		}
 
-	// team activation
-	if (jQuery(".bd-team-active").length > 0) {
-		let portfolio = new Swiper('.bd-team-active', {
-			slidesPerView: 1,
-			spaceBetween: 30,
-			// direction: 'vertical',
-			loop: true,
-			autoplay: {
-					delay: 5000,
-				},
-		  
-			// If we need pagination
-			pagination: {
-			  el: '.team-pagination',
-			  clickable: true,
-			},
-		  
-			// Navigation arrows
-			navigation: {
-			  nextEl: '.brand-button-next',
-			  prevEl: '.brand-button-prev',
-			},
-		  
-			// And if we need scrollbar
-			scrollbar: {
-			  el: '.swiper-scrollbar',
-			},
-			breakpoints: {
-				550: {
-				  slidesPerView: 2,
-				},
-				768: {
-				  slidesPerView: 2,
-				},
-				1200: {
-				  slidesPerView: 3,
-				},
-			  }
-		  });
-		}
-
 
 	// testimonial activation
 	if (jQuery(".bd-testimonial-four-active").length > 0) {
