@@ -180,38 +180,11 @@
         <!-- blog area start here -->
         <section class="bd-blog-area pt-150 pb-145">
             <div class="container">
-                <div class="row mb-30">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="bd-blog mb-30">
-                            <div class="bd-blog-img">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-img-1.1.jpg"
-                                        alt="blog image not found"></a>
-                            </div>
-                            <div class="bd-blog-text">
-                                <div class="bd-blog-meta mb-15">
-                                    <ul>
-                                        <li><a href="blog-details.html"><i class="flaticon-calendar"></i>21 Feb 2022</a>
-                                        </li>
-                                        
-                                    </ul>
-                                </div>
-                                <h4 class="bd-blog-title mb-40"><a href="blog-details.html">Umra ziyorati bo‘yicha yangi talablar va vaksina masalasiga aniqlik kiritildi</a></h4>
-                                <div class="bd-blog-author d-flex justify-content-end">
-                                    <!-- <div class="bd-blog-author-info">
-                                        <img src="assets/img/blog/blog-author-1.jpg" alt="author image not found">
-                                        <h6 class="bd-blog-author-info-title">Daniyel</h6>
-                                    </div> -->
-                                    <div class="bd-blog-author-link">
-                                        <a href="blog-details.html">Batafsil<i class="far fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="news-list-row" class="row mb-30">
                 </div>
                 <div class="row">
                     <div class="bd-slider-btn col-12 text-center" data-animation="fadeInUp" data-delay=".9s">
-                    <a href="blog.html" class="theme-btn">Hamma yangiliklar</a>
+                    <a href="blog.html" class="theme-btn">Ko'proq</a>
                 </div>
             </div>
         </section>
@@ -225,7 +198,7 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="bd-footer-widget footer-col-1 mb-30">
                                 <div class="bd-footer-info">
-                                       <h5 class="bd-footer-widget-title mb-35">Bog'lanish</h5>
+                                   <h5 class="bd-footer-widget-title mb-35">Bog'lanish</h5>
                                     <div class="bd-footer-info-item mb-10">
                                         <h6>Aloqa: </h6>
                                         <a href="tel:+998 (71) 2303388" target="_blank">+998 (71) 2303388</a>
@@ -317,7 +290,6 @@
                                         </a>
                                     </div>
                                 </div>
-                                                                
                             </div>
                         </div>
                     </div>
@@ -339,9 +311,11 @@
           
     </main>
 
-        
 
-
+    <script type="module" src="assets/js/api/news.js"></script>
+    <script>
+        getListNews()
+    </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

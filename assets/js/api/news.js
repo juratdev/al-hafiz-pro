@@ -4,26 +4,36 @@ import axios from './axios.js'
 
 const newsRows = document.getElementById('news-row');
 
-function getHomeNews() {
+export function getHomeNews() {
     axios.get('news/', {
         params: {
             limit: 3
         }
     })
     .then((response) => {
-        response.data.results.forEach((el) => renderNewsCard(el))
+        response.data.results.forEach((el) => renderNewsCard(el, newsRows))
     })
 }
 
-function renderNewsCard(item){
-    console.log(item)
-    newsRows.innerHTML += `
+const newsListRows = document.getElementById('news-list-row');
+
+export function getListNews() {
+    axios.get('news/', {
+        params: {
+            limit: 9
+        }
+    })
+        .then((response) => {
+            response.data.results.forEach((el) => renderNewsCard(el, newsListRows))
+        })
+}
+
+function renderNewsCard(item, playground){
+    playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
             <div class="bd-blog mb-30">
-                <div class="bd-blog-img">
-                    <a href="blog-details.html">
-                <img src="${item.image}" alt="blog image not found">
-                            </a>
+                <div class="bd-blog-img" style="aspect-ratio: 470/273">
+                    <img style="width: 100%; height: 100%; object-fit: cover" src="${item.image}" alt="blog image not found">
                 </div>
                 <div class="bd-blog-text">
                     <div class="bd-blog-meta mb-15">
@@ -45,3 +55,4 @@ function renderNewsCard(item){
 }
 
 getHomeNews()
+getListNews()
