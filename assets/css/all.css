@@ -173,11 +173,14 @@ input[type="number"] {
 }
 
 .form-select {
-  border: 1px solid rgba(128, 128, 128, 0.282);
   width: 100%;
   height: 60px;
   background: var(--clr-bg-gray);
   border-radius: 10px;
+}
+
+.bd-contact-field input {
+  color: #000;
 }
 .bd-footer-socila {
   display: flex;
@@ -266,5 +269,117 @@ input[type="number"] {
 
   .questions-input {
     max-width: 250px;
+  }
+}
+
+/* .bd-page-title-bg {
+  background-image: url("../img/about/about-img-1.1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
+/* package section */
+.bd-page-package {
+  padding: 140px 0 100px;
+  background-color: #06635d8c;
+}
+
+.package-btn {
+  max-width: 150px;
+  text-align: center;
+  background-color: #e0b580;
+  padding: 8px 15px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.bd-package-title h1 {
+  padding: 40px 0 20px;
+  font-size: 72px;
+  color: #fff;
+}
+.bd-package-title h5 {
+  color: #fff;
+}
+.bd-page-package-price {
+  margin-top: 30px;
+}
+.package-price-date {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #efefef;
+  border-radius: 20px;
+  padding: 20px;
+  color: #000;
+}
+.price-date-title {
+  color: #000;
+}
+.price-date-title span {
+  font-weight: bold;
+}
+
+.package-price-info {
+  display: flex;
+  gap: 10px;
+}
+
+.price-info-title {
+  padding: 30px 40px;
+  border-radius: 20px;
+  background-color: #06635d;
+  color: #fff;
+  text-align: center;
+}
+
+/* blog-details */
+
+.ablog__text {
+  padding: 0;
+}
+
+.details-min-title {
+  color: #000;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.details-title-info {
+  text-align: center;
+  background-color: #06635d;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 780px) {
+  .bd-blog-deatils-area {
+    padding: 50px 0;
+  }
+  .bd-blog-details-title {
+    font-size: 32px;
+  }
+  .details-min-title {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .details-title-info {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .bd-blog-details-title {
+    font-size: 24px;
+  }
+  .details-min-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .details-title-info {
+    font-size: 18px;
   }
 }

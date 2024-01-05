@@ -239,7 +239,7 @@
 
                                     Ushbu oyati karimaga binoan mo‘min-musulmonlar Haj va Umra ibodatini ado etadilar.</p>
                                     <div class="bd-about-text-btn">
-                                        <a href="about.html" class="theme-btn">Umra ziyorati haqida batafsil</a>
+                                        <a href="blog-details.html" class="theme-btn">Umra ziyorati haqida batafsil</a>
                                     </div>
                                 </div>
                             </div>
@@ -533,7 +533,7 @@
                         <p style="color: #fff;">Raqamingizni qoldiring va biz siz bilan tez orada bog'lanamiz</p>
                         <form action="#">
                              <div class="d-flex gap-3 questions-form">
-                                <input class="form-select questions-input" type="number" placeholder="Telefon raqamingiz" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="13" required/>
+                                <input name="phone" id="phoneInput" class="form-select questions-input" type="number" placeholder="Telefon raqamingiz" />
                                 <a href="#" style="background-color: #FEC39A;" class="theme-btn">Yuborish</a>
                             </div>
                         </form>
@@ -667,12 +667,12 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="bd-contact-field mb-30">
-                                            <input class="form-select" type="text" placeholder="Ismingiz">
+                                            <input class="form-select" type="text" placeholder="Ismingiz" style="  border: 1px solid rgba(128, 128, 128, 0.282);">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="bd-contact-field mb-30">
-                                            <input class="form-select" type="number" placeholder="Telefon raqamingiz" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="13" required/>
+                                            <input id="phoneInput" oninput="maskPhoneNumber()"  class="form-select" type="number" placeholder="Telefon raqamingiz" style="border: 1px solid rgba(128, 128, 128, 0.282);" required/>
                                         </div>
                                     </div>
                                     <div class="col-12">
