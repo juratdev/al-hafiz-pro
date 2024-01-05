@@ -5,7 +5,7 @@ import axios from './axios.js'
 const gallery = document.getElementById('gallery-section');
 
 function getData() {
-    return axios.get('gallery/')
+    axios.get('gallery/')
         .then(function (response) {
             response.data.forEach((el) => renderGalleryItem(el))
             mountGallerySlider()
