@@ -9,3 +9,30 @@ export function convertToEmbed(url) {
     }
 }
 
+export function getSingleIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
+
+export function formatMoneyDecimal(number, fix , option ) {
+    let style;
+    if (["USD", "RUB"].includes(option)) {
+        style = "currency";
+    } else if (["kilogram", "meter", "percent"].includes(option)) {
+        style = "unit";
+    } else {
+        style = "";
+    }
+
+    const newStyle = style;
+    const option2 = {
+        newStyle, //  unit currency percent decimal
+        [newStyle]: option,
+        maximumFractionDigits: fix,
+        minimumFractionDigits: fix,
+    };
+    return number
+        ? new Intl.NumberFormat("ru-RU", option2).format(number)
+        : "0,00";
+}

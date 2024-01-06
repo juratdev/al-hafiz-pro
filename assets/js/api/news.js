@@ -1,5 +1,6 @@
 // const axios = require('axios');
 import axios from './axios.js'
+import {getSingleIdFromUrl} from "../helpers.js";
 
 const newsRows = document.getElementById('news-row');
 
@@ -46,18 +47,28 @@ function renderNewsCard(item, playground){
                 <div class="bd-blog-text">
                     <div class="bd-blog-meta mb-15">
                         <ul>
-                            <li><a href="blog-details.html"><i class="flaticon-calendar"></i>21 Feb 2022</a>
+                            <li><a href="news-details.html"><i class="flaticon-calendar"></i>21 Feb 2022</a>
                             </li>
                         </ul>
                     </div>
                     <h4 class="bd-blog-title mb-40">${item.title}</h4>
                     <div class="bd-blog-author d-flex justify-content-end">
                         <div class="bd-blog-author-link">
-                            <a href="blog-details.html?id=${item.id}">Batafsil<i class="far fa-arrow-right"></i></a>
+                            <a href="news-details.html?id=${item.id}">Batafsil<i class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>        
      `
+}
+
+export function getNewsDetails() {
+    axios.get(`news/${getSingleIdFromUrl()}/`)
+    .then((response) => {
+        const item = response.data;
+        document.querySelectorAll('.news-details-title')?.forEach((el) => el.innerHTML = item.title);
+        document.getElementById('news-details-content').innerHTML = item.body;
+        document.getElementById('news-details-image').src = item.image;
+    })
 }
