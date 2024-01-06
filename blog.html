@@ -180,18 +180,19 @@
         <!-- blog area start here -->
         <section class="bd-blog-area pt-150 pb-145">
             <div class="container">
-                <div id="news-list-row" class="row mb-30">
+                <div id="news-list-row" class="row mb-20">
                 </div>
                 <div class="row">
                     <div class="bd-slider-btn col-12 text-center" data-animation="fadeInUp" data-delay=".9s">
-                    <a href="blog.html" class="theme-btn">Ko'proq</a>
+                        <button class="theme-btn" id="news-load-more" style="display: none">Ko'proq</button>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- blog area end here -->
         
-          <!-- footer area start here -->
-          <footer id="contact" class="heading-bg">
+        <!-- footer area start here -->
+        <footer id="contact" class="heading-bg">
             <div class="bd-footer-area pt-100 pb-60">
                 <div class="container">
                     <div class="row d-flex justify-content-between">
@@ -311,10 +312,11 @@
           
     </main>
 
+    <script type="module">
+        import { getListNews, loadMoreNews } from './assets/js/api/news.js';
+        getListNews();
 
-    <script type="module" src="assets/js/api/news.js"></script>
-    <script>
-        getListNews()
+        document.getElementById('news-load-more').addEventListener('click', loadMoreNews);
     </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>

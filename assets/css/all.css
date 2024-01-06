@@ -57,9 +57,9 @@ input[type="number"] {
   font-size: 64px;
 }
 
-.bd-slider-btn {
-  margin-top: 80px;
-}
+/*.bd-slider-btn {*/
+/*  margin-top: 80px;*/
+/*}*/
 /* Media Queries slider */
 @media only screen and (max-width: 1350px) {
   .bd-slider-title {
