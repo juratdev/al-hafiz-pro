@@ -164,3 +164,19 @@ function renderTariffSingle(data) {
   document.getElementById("tariff-transport-body").innerText =
     data.transport.body;
 }
+
+export function getSelectPlans() {
+  const applicationTariffs = document.getElementById("application-tariffs");
+  axios
+    .get("tarif/", {
+      params: {
+        limit: 100,
+      },
+    })
+    .then((response) => {
+      response.data.results.forEach((el) => {
+        applicationTariffs.innerHTML += `
+        <option value="${el.id}">${el.title}</option>`;
+      });
+    });
+}
