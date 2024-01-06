@@ -339,6 +339,9 @@ input[type="number"] {
   text-align: center;
 }
 
+.bd-service-title-2 {
+  font-size: 18px;
+}
 /* blog-details */
 
 .ablog__text {
@@ -410,7 +413,9 @@ input[type="number"] {
 .gray-bg-about {
   background: #e6eeed;
 }
-
+.info-area-main {
+  gap: 50px;
+}
 .bd-info-area-title {
   gap: 10px;
   margin-bottom: 8px;
@@ -426,6 +431,9 @@ input[type="number"] {
   white-space: nowrap;
 }
 @media only screen and (max-width: 780px) {
+  .info-area-main {
+    gap: 10px;
+  }
   .deatils-areas-1 {
     margin-bottom: 10px;
   }
