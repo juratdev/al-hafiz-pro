@@ -59,7 +59,7 @@ function renderNewsCard(item, playground){
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
      `
 }
 
