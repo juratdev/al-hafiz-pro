@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="manifest" href="site.webmanifest">
-     <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo/Logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo/Logo.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    
+
 
     <!-- preloader -->
     <div id="preloader">
@@ -65,32 +65,32 @@
                                     <ul>
                                         <li><a href="#home">Bosh
                                                 sahifa</a>
-            
+
                                         </li>
                                         <li><a href="#about">Umra ziyorati</a>
-                                            
+
                                         </li>
                                         <li><a href="#pricing">Safar tariflari</a>
-                                           
+
                                         </li>
                                         <li><a href="#choose">Biz haqimizda</a>
-                                            
+
                                         </li>
 
                                         <li><a href="#news">Yangiliklar</a>
-                                        
+
                                         </li>
                                         <li><a href="#contact">Aloqa</a></li>
                                     </ul>
                                 </nav>
                                 <div>
-                                     <select class="btn-lang" id="lang" name="lang">
-                                      <option value="tarif" selected>ru</option>
-                                      <option value="standart">uz</option>          
+                                    <select class="btn-lang" id="lang" name="lang">
+                                        <option value="tarif" selected>ru</option>
+                                        <option value="standart">uz</option>
                                     </select>
                                 </div>
                             </div>
-                             
+
                             <!-- mobile menu activation -->
                             <div class="side-menu-icon d-xl-none text-end">
                                 <button class="side-toggle"><i class="far fa-bars"></i></button>
@@ -112,19 +112,23 @@
                 <div class="contact-infos mb-30">
                     <div class="contact-list mb-30">
                         <div>
-                             <select class="btn-lang-mobil" id="lang" name="lang">
-                              <option value="tarif" selected>ru</option>
-                              <option value="standart">uz</option>          
+                            <select class="btn-lang-mobil" id="lang" name="lang">
+                                <option value="tarif" selected>ru</option>
+                                <option value="standart">uz</option>
                             </select>
                         </div>
                         <h4 style="margin-top: 20px;">Contact Info</h4>
-                        
+
                         <ul>
-                            <li><i class="flaticon-location-1"></i><a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFiSkwHQFprfX55dHxmYQ==/?ll=69.259075%2C41.284513&z=16" target="_blank">Toshkent, Yakkasaroy tumani, Humo 57</a></li>
-                            <li><i class="flaticon-email"></i><a href="mailto:info@al-hafiz.uz" target="_blank">info@al-hafiz.uz</a></li>
-                            <li><i class="flaticon-phone-call"></i> <a href="tel:+998 (71) 2303388" target="_blank">+998 (71) 2303388</a></li>
+                            <li><i class="flaticon-location-1"></i><a
+                                    href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFiSkwHQFprfX55dHxmYQ==/?ll=69.259075%2C41.284513&z=16"
+                                    target="_blank">Toshkent, Yakkasaroy tumani, Humo 57</a></li>
+                            <li><i class="flaticon-email"></i><a href="mailto:info@al-hafiz.uz"
+                                    target="_blank">info@al-hafiz.uz</a></li>
+                            <li><i class="flaticon-phone-call"></i> <a href="tel:+998 (71) 2303388" target="_blank">+998
+                                    (71) 2303388</a></li>
                         </ul>
-                        
+
                         <div class="sidebar__menu--social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -162,11 +166,11 @@
                     <div class="col-12">
                         <div class="bd-package-title z-index">
                             <div class="package-btn">
-                              <span>Standart tarif</span>
+                                <span class="tariff-title"></span>
                             </div>
                             <div class="bd-package-main-title">
-                              <h1>Standart tarif</h1>
-                              <h5>Madina: ASSAFA - 3 Kecha, Makka: VOCO - 11 Kecha</h5>
+                                <h1 class="tariff-title"></h1>
+                                <h5 id="tariff-subtitle"></h5>
                             </div>
                         </div>
                     </div>
@@ -177,46 +181,34 @@
 
         <section class="bd-page-package-price">
             <div class="container">
-                  <div class="row package-price container">
-                      <div class="col-xl-6 col-md-4 col-12 package-price-date">
-                         <div class="package-price-main-date"><p class="price-date-title">Boshlanish sanasi:</p>
-                            <p class="price-date-title" style="font-weight: bold;">22 yan, 2024</p>
+                <div class="row package-price container">
+                    <div class="col-xl-6 col-md-4 col-12 package-price-date">
+                        <div class="package-price-main-date">
+                            <p class="price-date-title">Boshlanish sanasi:</p>
+                            <p class="price-date-title" style="font-weight: bold;" id="tariff-start-time"></p>
                         </div>
-                         <div class="package-price-main-date"><p class="price-date-title">Boshlanish sanasi:</p>
-                            <p class="price-date-title" style="font-weight: bold;">1 fev, 2024</p>
+                        <div class="package-price-main-date">
+                            <p class="price-date-title">Yakunlanish sanasi:</p>
+                            <p class="price-date-title" style="font-weight: bold;" id="tariff-end-time"></p>
                         </div>
-                      </div>
-                      <div class="col-xl-6 col-md-4 col-12 package-price-info">
-                         <div class="price-info-title">
-                          <p class="text-white">4 kishilik</p>
-                          <div>....</div>
-                          <h5 class="text-white">1620$</h5>
-                         </div>
-                         <div class="price-info-title">
-                          <p class="text-white">3 kishilik</p>
-                          <div>....</div>
-                          <h5 class="text-white">1620$</h5>
-                         </div>
-                         <div class="price-info-title">
-                          <p class="text-white">2 kishilik</p>
-                          <div>....</div>
-                          <h5 class="text-white">1620$</h5>
-                         </div>
-                      </div>
-                  </div>
+                    </div>
+                    <div class="col-xl-6 col-md-4 col-12 package-price-info" id="tariff-price-list">
+
+                    </div>
+                </div>
             </div>
 
         </section>
         <!-- blog area start here -->
-        <section class="bd-blog-deatils-area pt-100 pb-50">
+        <!-- <section class="bd-blog-deatils-area pt-100 pb-50">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="ablog__text mt-50">
-                            <h2 class="bd-blog-details-title mb-25 text-center">Standart tarif </h2>
+                            <h2 class="bd-blog-details-title mb-25 text-center tariff-title">Standart tarif </h2>
                             <ul class="mb-30 details-min-title">
                                 <li>To’g’ridan to’g’ri aviaparvoz Tashkent-Jidda-Tashkent</li>
-                                <li>  Barcha yo’nalishlar uchun zamonaviy va qulay avtobuslar</li>
+                                <li> Barcha yo’nalishlar uchun zamonaviy va qulay avtobuslar</li>
                                 <li> Madina va Makka shaharlaridagi mehmonxonalarda 2 mahal taom</li>
                                 <li>Viza va tibbiy sug’urta</li>
                                 <li>Madina: ASSAFA - 3 Kecha</li>
@@ -226,10 +218,10 @@
                                 <li>Madina va Makka shahrida amallar va ekskursiyalar.</li>
                             </ul>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- blog area end here -->
 
         <!-- service area start here -->
@@ -244,225 +236,149 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/air.svg" alt="air">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Aviachipta</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/worker.svg" alt="managers">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Ellikboshi xizmati</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/insurance.svg" alt="insurance">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Sug’urta</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/hotel.svg" alt="hotel">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Mehmonxona</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/meal.svg" alt="meal">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">2 mahal taom</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/guide.svg" alt="guide">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Ziyoratchi qo’llanmasi</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/collection.svg" alt="collection">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Umra safar to’plami</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a>
-                             <div class="bd-service mb-30">
-                                <div class="bd-service-icon mb-20">
-                                    <img src="./assets/img/service/litsenziya.svg" alt="">
-                                </div>
-                                <h4 class="bd-service-title bd-service-title-2">Viza</h4>
-                            </div>
-                        </a>
-                    </div>
+                <div class="row" id="tariff-services">
+
                 </div>
             </div>
         </section>
         <!-- service area end here -->
-       
+
         <!-- choose area start here -->
         <section id="choose" class="bd-choose-area fix">
             <div class="container">
                 <div class="bd-choose-shape pt-150">
-                            <h2 class="bd-section-title mb-25">Makka shahridagi<br> 
-                            <span style="color: #e0b580;">5 yulduzli</span> mehmonxona</h2>
-                            <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
-                                <div class="col-xl-6 col-lg-6 order-1 order-lg-2">
-                                    <div class="bd-choose-img text-end mb-30 z-index">
-                                        <div class="row align-items-center custom-mar-15">
-                                            <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
-                                                <div class="bd-choose-img-inner mb-15 bd-choose-img-inner-1">
-                                                    <img src="assets/img/about/choose-1.1.png" alt="img not found">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
-                                                <div class="bd-choose-img-inner mb-15">
-                                                    <img src="assets/img/about/choose-2.1.png" alt="img not found">
-                                                </div>
-                                                <div class="bd-choose-img-inner mb-15">
-                                                    <img src="assets/img/about/choose-2.1.png" alt="img not found">
-                                                </div>
-                                            </div>
+                    <h2 class="bd-section-title mb-25">Makka shahridagi<br>
+                        <span style="color: #e0b580;"><span id="makkah-hotel-star"></span> yulduzli</span> mehmonxona
+                    </h2>
+                    <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
+                        <div class="col-xl-6 col-lg-6 order-1 order-lg-2">
+                            <div class="bd-choose-img text-end mb-30 z-index">
+                                <div class="row align-items-center custom-mar-15">
+                                    <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
+                                        <div class="bd-choose-img-inner mb-15 bd-choose-img-inner-1">
+                                            <img src="assets/img/about/choose-1.1.png" alt="img not found">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 order-2 order-lg-1">
-                                    <div class="bd-choose-text mb-30 z-index">
-
-                                        <div class="bd-section-title-wrapper-1 mb-35">
-                                            <h5>Taiba Madinah hotel</h5>
-                                            <p>Masofa: 100m</p>
+                                    <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
+                                        <div class="bd-choose-img-inner mb-15">
+                                            <img src="assets/img/about/choose-2.1.png" alt="img not found">
                                         </div>
-                                
+                                        <div class="bd-choose-img-inner mb-15">
+                                            <img src="assets/img/about/choose-2.1.png" alt="img not found">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 order-2 order-lg-1">
+                            <div class="bd-choose-text mb-30 z-index">
+
+                                <div class="bd-section-title-wrapper-1 mb-35">
+                                    <h5 id="makkah-hotel-name"></h5>
+                                    <p>Masofa: <span id="makkah-hotel-distance"></span>m</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- choose area end here -->        
+        <!-- choose area end here -->
         <!-- choose area start here -->
         <section id="choose" class="bd-choose-area fix">
             <div class="container">
                 <div class="bd-choose-shape pt-150">
-                            <h2 class="bd-section-title mb-25">Makka shahridagi<br> 
-                            <span style="color: #e0b580;">5 yulduzli</span> mehmonxona</h2>
-                            <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
-                                <div class="col-xl-6 col-lg-6 order-1 order-lg-2">
-                                    <div class="bd-choose-img text-end mb-30 z-index">
-                                        <div class="row align-items-center custom-mar-15">
-                                            <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
-                                                <div class="bd-choose-img-inner mb-15 bd-choose-img-inner-1">
-                                                    <img src="assets/img/about/choose-1.1.png" alt="img not found">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
-                                                <div class="bd-choose-img-inner mb-15">
-                                                    <img src="assets/img/about/choose-2.1.png" alt="img not found">
-                                                </div>
-                                                <div class="bd-choose-img-inner mb-15">
-                                                    <img src="assets/img/about/choose-2.1.png" alt="img not found">
-                                                </div>
-                                            </div>
+                    <h2 class="bd-section-title mb-25">Madina shahridagi<br>
+                        <span style="color: #e0b580;"><span id="madinah-hotel-star"></span> yulduzli</span> mehmonxona
+                    </h2>
+                    <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
+                        <div class="col-xl-6 col-lg-6 order-1 order-lg-2">
+                            <div class="bd-choose-img text-end mb-30 z-index">
+                                <div class="row align-items-center custom-mar-15">
+                                    <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
+                                        <div class="bd-choose-img-inner mb-15 bd-choose-img-inner-1">
+                                            <img src="assets/img/about/choose-1.1.png" alt="img not found">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 order-2 order-lg-1">
-                                    <div class="bd-choose-text mb-30 z-index">
-
-                                        <div class="bd-section-title-wrapper-1 mb-35">
-                                            <h5>Sheraton Makkah</h5>
-                                            <h5>Jabal Al Kaaba</h5>
-                                            <p>Masofa: 200m</p>
+                                    <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
+                                        <div class="bd-choose-img-inner mb-15">
+                                            <img src="assets/img/about/choose-2.1.png" alt="img not found">
                                         </div>
-                                
+                                        <div class="bd-choose-img-inner mb-15">
+                                            <img src="assets/img/about/choose-2.1.png" alt="img not found">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 order-2 order-lg-1">
+                            <div class="bd-choose-text mb-30 z-index">
+
+                                <div class="bd-section-title-wrapper-1 mb-35">
+                                    <h5 id="madinah-hotel-name"></h5>
+                                    <p>Masofa: <span id="madinah-hotel-distance"></span>m</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- choose area end here -->        
-        
+        <!-- choose area end here -->
+
         <!-- choose area start here -->
         <section id="choose" class="bd-choose-area fix">
             <div class="container">
                 <div class="bd-choose-shape pt-150">
-                            <h2 class="bd-section-title mb-25">Transport</h2>
-                            <div class="col-12 bd-section-mini-title">
-                                <div>
-                                    <h4>To’g’ridan to’g’ri aviaparvoz <br>Tashkent-Jidda-Tashkent</h4>
-                                </div>
-                                <div class="bd-section-mini-title-img">
-                                    <img src="https://picsum.photos/200/100" alt="air">
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
-                                <div class="col-xl-6 col-lg-6 order-1 order-lg-2">
-                                    <div class="bd-choose-img text-end mb-30 z-index">
-                                        <div class="row align-items-center custom-mar-15">
-                                            <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
-                                                <div class="bd-choose-img-inner mb-15 bd-choose-img-inner-1">
-                                                    <img src="assets/img/about/choose-1.1.png" alt="img not found">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
-                                                <div class="bd-choose-img-inner mb-15">
-                                                    <img src="assets/img/about/choose-2.1.png" alt="img not found">
-                                                </div>
-                                                <div class="bd-choose-img-inner mb-15">
-                                                    <img src="assets/img/about/choose-2.1.png" alt="img not found">
-                                                </div>
-                                            </div>
+                    <h2 class="bd-section-title mb-25">Transport</h2>
+                    <div class="col-12 bd-section-mini-title">
+                        <div>
+                            <h4>
+                                <span id="tariff-transport-title"></span>
+                                <br>
+                                <span id="tariff-transport-subtitle"></span>
+                            </h4>
+                        </div>
+                        <div class="bd-section-mini-title-img">
+                            <img src="https://picsum.photos/200/100" alt="air">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
+                        <div class="col-xl-6 col-lg-6 order-1 order-lg-2">
+                            <div class="bd-choose-img text-end mb-30 z-index">
+                                <div class="row align-items-center custom-mar-15">
+                                    <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
+                                        <div class="bd-choose-img-inner mb-15 bd-choose-img-inner-1">
+                                            <img src="assets/img/about/choose-1.1.png" alt="img not found">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-6 custom-pad-15">
+                                        <div class="bd-choose-img-inner mb-15">
+                                            <img src="assets/img/about/choose-2.1.png" alt="img not found">
+                                        </div>
+                                        <div class="bd-choose-img-inner mb-15">
+                                            <img src="assets/img/about/choose-2.1.png" alt="img not found">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 order-2 order-lg-1">
-                                    <div class="bd-choose-text mb-30">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 order-2 order-lg-1">
+                            <div class="bd-choose-text mb-30">
 
-                                        <div class="bd-section-title-wrapper-1 mb-35" style="width: 100%;">
-                                            <h5>Zamonaviy va qulay avtobuslar</h5>
-                                            <h5>Madina va Makka shahridagi 
-                                            barcha yo’nalishlar uchun avtobuslar</h5>
-                                        </div>
-                                
-                                    </div>
+                                <div class="bd-section-title-wrapper-1 mb-35" style="width: 100%;">
+                                    <h5 id="tariff-transport-body"></h5>
                                 </div>
+
                             </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- choose area end here --> 
+        <!-- choose area end here -->
 
         <!-- footer area start here -->
         <footer id="contact" class="heading-bg">
@@ -472,7 +388,7 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="bd-footer-widget footer-col-1 mb-30">
                                 <div class="bd-footer-info">
-                                       <h5 class="bd-footer-widget-title mb-35">Bog'lanish</h5>
+                                    <h5 class="bd-footer-widget-title mb-35">Bog'lanish</h5>
                                     <div class="bd-footer-info-item mb-10">
                                         <h6>Aloqa: </h6>
                                         <a href="tel:+998 (71) 2303388" target="_blank">+998 (71) 2303388</a>
@@ -483,7 +399,8 @@
                                     </div>
                                     <div class="bd-footer-info-item">
                                         <h6>Ofis manzili :</h6>
-                                        <a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFiSkwHQFprfX55dHxmYQ==/?ll=69.259075%2C41.284513&z=16" target="_blank">Toshkent, Yakkasaroy tumani, Humo 57</a>
+                                        <a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFiSkwHQFprfX55dHxmYQ==/?ll=69.259075%2C41.284513&z=16"
+                                            target="_blank">Toshkent, Yakkasaroy tumani, Humo 57</a>
                                     </div>
                                 </div>
                             </div>
@@ -511,60 +428,60 @@
                                                 <img src="./assets/img/footer/facebook.svg" alt="facebook">
                                             </div>
                                             <span>alhafiz_travel</span>
-                                        </a>    
+                                        </a>
                                         <a href="#" class="socila-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/email.svg" alt="email">
                                             </div>
                                             <span>info@al-hafiz.uz</span>
-                                        </a>    
+                                        </a>
                                         <a href="#" class="socila-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/instagram.svg" alt="instagram">
                                             </div>
                                             <span>alhafiz_travel</span>
-                                        </a>    
+                                        </a>
                                         <a href="#" class="socila-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/telegram.svg" alt="telegram">
                                             </div>
                                             <span>al_hafiztravel</span>
-                                        </a>    
+                                        </a>
                                     </div>
                                     <div class="bd-footer-cards">
-                                          <a href="#" class="cards-link" target="_blank">
+                                        <a href="#" class="cards-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/mastercard.svg" alt="mastercard">
                                             </div>
                                         </a>
-                                          <a href="#" class="cards-link" target="_blank">
+                                        <a href="#" class="cards-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/visa.svg" alt="visa">
                                             </div>
                                         </a>
-                                          <a href="#" class="cards-link" target="_blank">
+                                        <a href="#" class="cards-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/paypal.svg" alt="paypal">
-                                            </div>  
+                                            </div>
                                         </a>
-                                          <a href="#" class="cards-link" target="_blank">
+                                        <a href="#" class="cards-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/uzcard.svg" alt="uzcard">
                                             </div>
                                         </a>
-                                          <a href="#" class="cards-link" target="_blank">
+                                        <a href="#" class="cards-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/click.svg" alt="click">
                                             </div>
                                         </a>
-                                          <a href="#" class="cards-link" target="_blank">
+                                        <a href="#" class="cards-link" target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/payme.svg" alt="payme">
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                                                
+
                             </div>
                         </div>
                     </div>
@@ -575,7 +492,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="bd-copyright text-center">
-                                <p class="m-0">© 2024 All rights reserved | Design & Develop by <a href="https://t.me/open_gd" target="_blank">Visuloop family</a></p>
+                                <p class="m-0">© 2024 All rights reserved | Design & Develop by <a
+                                        href="https://t.me/open_gd" target="_blank">Visuloop family</a></p>
                             </div>
                         </div>
                     </div>
@@ -583,12 +501,12 @@
             </div>
         </footer>
         <!-- footer area end here -->
-          
+
     </main>
 
 
     <script type="module">
-        import {getPlansDetails} from "./assets/js/api/plans.js";
+        import { getPlansDetails } from "./assets/js/api/plans.js";
 
         getPlansDetails()
     </script>
