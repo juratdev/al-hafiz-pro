@@ -57,13 +57,10 @@ function renderNewsCard(item, playground){
         </div>
      `
 }
-//
-// export function getNewsDetails() {
-//     axios.get(`news/${getSingleIdFromUrl()}/`)
-//     .then((response) => {
-//         const item = response.data;
-//         document.querySelectorAll('.news-details-title')?.forEach((el) => el.innerHTML = item.title);
-//         document.getElementById('news-details-content').innerHTML = item.body;
-//         document.getElementById('news-details-image').src = item.image;
-//     })
-// }
+export function getPlansDetails() {
+    axios.get(`tarif/${getSingleIdFromUrl()}/`)
+    .then((response) => {
+        const item = response.data;
+        console.log(item)
+    })
+}
