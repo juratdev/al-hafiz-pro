@@ -9,3 +9,7 @@ export function convertToEmbed(url) {
     }
 }
 
+export function getSingleIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
