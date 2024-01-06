@@ -535,7 +535,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="bd-slider-btn col-12 text-center data-animation="fadeInUp" data-delay=".9s">
+                    <div class="bd-slider-btn col-12 text-center" data-animation="fadeInUp" data-delay=".9s">
                         <a href="blog.html" class="theme-btn">Hamma yangiliklar</a>
                     </div>
                 </div>
@@ -744,8 +744,12 @@
 
 
 
+    <!--  Data GET methods  -->
     <script type="module" src="assets/js/api/gallery.js"></script>
-    <script type="module" src="assets/js/api/news.js"></script>
+    <script type="module">
+        import { getHomeNews } from './assets/js/api/news.js';
+        getHomeNews();
+    </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

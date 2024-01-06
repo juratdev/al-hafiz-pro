@@ -1,29 +1,47 @@
 // const axios = require('axios');
-import {convertToEmbed} from "../helpers.js";
 import axios from './axios.js'
 
 const newsRows = document.getElementById('news-row');
 
-function getHomeNews() {
+export function getHomeNews() {
     axios.get('news/', {
         params: {
             limit: 3
         }
     })
     .then((response) => {
-        response.data.results.forEach((el) => renderNewsCard(el))
+        response.data.results.forEach((el) => renderNewsCard(el, newsRows))
     })
 }
 
-function renderNewsCard(item){
-    console.log(item)
-    newsRows.innerHTML += `
+const newsListRows = document.getElementById('news-list-row');
+
+
+const listParams = {
+    limit: 9,
+    offset: 0
+}
+export function getListNews() {
+    axios.get('news/', {
+        params: listParams
+    })
+    .then((response) => {
+        response.data.results.forEach((el) => renderNewsCard(el, newsListRows))
+        document.getElementById('news-load-more').style.display = !response.data.next ? 'none' : 'inline-flex';
+    })
+}
+
+export function loadMoreNews() {
+    listParams.offset += listParams.limit;
+    getListNews();
+}
+
+function renderNewsCard(item, playground){
+    playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
             <div class="bd-blog mb-30">
-                <div class="bd-blog-img">
-                    <a href="blog-details.html">
-                <img src="${item.image}" alt="blog image not found">
-                            </a>
+                <div class="bd-blog-img" style="aspect-ratio: 470/273">
+                    <img style="width: 100%; height: 100%; object-fit: cover" src="${item.image}" alt="blog image not found">
                 </div>
                 <div class="bd-blog-text">
                     <div class="bd-blog-meta mb-15">
@@ -35,13 +53,11 @@ function renderNewsCard(item){
                     <h4 class="bd-blog-title mb-40">${item.title}</h4>
                     <div class="bd-blog-author d-flex justify-content-end">
                         <div class="bd-blog-author-link">
-                            <a href="blog-details.html">Batafsil<i class="far fa-arrow-right"></i></a>
+                            <a href="blog-details.html?id=${item.id}">Batafsil<i class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
      `
 }
-
-getHomeNews()
