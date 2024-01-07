@@ -61,9 +61,18 @@ input[type="number"] {
   font-size: 64px;
 }
 
+.bd-pricing-area .bd-pricing {
+  padding: 32px 28px;
+  border-radius: 14px;
+}
+.bd-pricing-area .bd-pricing .bd-pricing-subtitle{
+  font-size: 24px;
+}
+
 /*.bd-slider-btn {*/
 /*  margin-top: 80px;*/
 /*}*/
+
 /* Media Queries slider */
 @media only screen and (max-width: 1350px) {
   .bd-slider-title {

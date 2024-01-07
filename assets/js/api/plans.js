@@ -45,21 +45,20 @@ export function getHomePlans() {
 function renderTariffsCard(item, playground) {
   playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
-            <div class="bd-pricing mb-30">
-                <div class="bd-pricing-title-wrapper text-center mb-65">
+            <div class="bd-pricing h-100 d-flex flex-column justify-content-between">
+                <div>
+                <div class="bd-pricing-title-wrapper text-center mb-20">
                     <h6 class="bd-pricing-subtitle mb-15">${item.title}</h6>
-                    <h6 class="bd-pricing-price">${formatMoneyDecimal(
+                    <h6 class="bd-pricing-price">$${formatMoneyDecimal(
                       item.price
-                    )}<span>.00/so’m</span></h6>
+                    )}</h6>
                 </div>
-                <ul class="mb-80">
-                ${item.services
-                  .map(
-                    (el) =>
-                      `<li style="line-height: 21px;"><i class="fal fa-check"></i>${el.name}</li>`
-                  )
-                  .join("")}
+                <ul class="mb-40">
+                    ${
+                        item.services.map((el) => `<li style="line-height: 21px;"><i class="fal fa-check"></i>${el.name}</li>`).join("")
+                    }
                 </ul>
+                </div>
                 <div class="bd-pricing-btn">
                     <a href="tarif-details.html?id=${
                       item.id
