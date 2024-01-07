@@ -69,6 +69,11 @@ input[type="number"] {
   font-size: 24px;
 }
 
+.bd-pricing-area .bd-pricing .bd-pricing-btn .theme-btn {
+  height: 50px;
+  line-height: 50px;
+}
+
 /*.bd-slider-btn {*/
 /*  margin-top: 80px;*/
 /*}*/

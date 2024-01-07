@@ -20,38 +20,36 @@ export function getHomePlans() {
     });
 }
 
-// const newsListRows = document.getElementById('news-list-row');
-//
-//
-// const listParams = {
-//     limit: 9,
-//     offset: 0
-// }
-// export function getListNews() {
-//     axios.get('news/', {
-//         params: listParams
-//     })
-//     .then((response) => {
-//         response.data.results.forEach((el) => renderNewsCard(el, newsListRows))
-//         document.getElementById('news-load-more').style.display = !response.data.next ? 'none' : 'inline-flex';
-//     })
-// }
-//
-// export function loadMoreNews() {
-//     listParams.offset += listParams.limit;
-//     getListNews();
-// }
-//
-function renderTariffsCard(item, playground) {
+const plansListRows = document.getElementById('plans-list-row');
+
+
+const listParams = {
+    limit: 3,
+    offset: 0
+}
+export function getTariffs() {
+    axios.get('tarif/', {
+        params: listParams
+    })
+    .then((response) => {
+        response.data.results.forEach((el) => renderTariffsCard(el, plansListRows, 'background-color: #f2f2f2;'))
+        document.getElementById('tariffs-load-more').style.display = !response.data.next ? 'none' : 'inline-flex';
+    })
+}
+
+export function loadMoreTariffs() {
+  listParams.offset += listParams.limit;
+  getTariffs();
+}
+
+function renderTariffsCard(item, playground, cardStyle = "") {
   playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
-            <div class="bd-pricing h-100 d-flex flex-column justify-content-between">
+            <div class="bd-pricing h-100 d-flex flex-column justify-content-between" style="${cardStyle}">
                 <div>
                 <div class="bd-pricing-title-wrapper text-center mb-20">
                     <h6 class="bd-pricing-subtitle mb-15">${item.title}</h6>
-                    <h6 class="bd-pricing-price">$${formatMoneyDecimal(
-                      item.price
-                    )}</h6>
+                    <h6 class="bd-pricing-price">$${formatMoneyDecimal(item.price)}</h6>
                 </div>
                 <ul class="mb-40">
                     ${
@@ -72,7 +70,6 @@ function renderTariffsCard(item, playground) {
 export function getPlansDetails() {
   axios.get(`tarif/${getSingleIdFromUrl()}/`).then((response) => {
     renderTariffSingle(response.data);
-    console.log(response.data);
   });
 }
 

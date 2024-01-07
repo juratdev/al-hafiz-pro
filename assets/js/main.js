@@ -165,7 +165,7 @@ $(".popup-video").magnificPopup({
 			paginationClickable: true,
 			loop: true,
 			effect: 'fade',
-
+			allowTouchMove: false,
 			autoplay: {
 				delay: 5000,
 			},
