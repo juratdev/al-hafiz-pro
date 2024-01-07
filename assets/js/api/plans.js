@@ -32,7 +32,7 @@ export function getTariffs() {
         params: listParams
     })
     .then((response) => {
-        response.data.results.forEach((el, index) => renderTariffsCard(el, index, plansListRows, 'background-color: #f2f2f2;'))
+        response.data.results.forEach((el, index) => renderTariffsCard(el, index, plansListRows, `background-color: ${index % 2 === 0 ? '#f2f2f2' : '#06635D' };`))
         document.getElementById('tariffs-load-more').style.display = !response.data.next ? 'none' : 'inline-flex';
     })
 }
@@ -45,7 +45,7 @@ export function loadMoreTariffs() {
 function renderTariffsCard(item, index, playground, cardStyle = "") {
   playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
-            <div class="bd-pricing ${index%2 === 0 ? 'bd-pricing-active' : ''} h-100 d-flex flex-column justify-content-between" style="${cardStyle}">
+            <div class="bd-pricing ${index%2 === 1 ? 'bd-pricing-active' : ''} h-100 d-flex flex-column justify-content-between" style="${cardStyle}">
                 <div>
                 <div class="bd-pricing-title-wrapper text-center mb-20">
                     <h6 class="bd-pricing-subtitle mb-15">${item.title}</h6>
