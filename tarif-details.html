@@ -327,7 +327,7 @@
                             </h4>
                         </div>
                         <div class="bd-section-mini-title-img">
-                            <img src="https://picsum.photos/200/100" alt="air">
+                            <img width="400" height="200" style="object-fit:cover;" src="/assets/img/airplane.webp" alt="air">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-between align-items-center bd-choose-shape-main">
@@ -364,6 +364,87 @@
             </div>
         </section>
         <!-- choose area end here -->
+
+        <!-- contact area start here -->
+        <section id="contact" class="bd-contact-area pt-50 pb-140">
+            <div class="container">
+                <div class="row d-flex justify-content-between align-items-center bd-contact-area-all">
+                    <!-- map area start here -->
+                    <div class="bd-map-area col-lg-6">
+                        <div class="bd-map">
+                            <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799160891!2d-74.25987584510595!3d40.69767006338158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1646475654918!5m2!1sen!2sbd"></iframe>
+                        </div>
+                    </div>
+                    <!-- map area end here -->
+
+                    <div class="col-lg-6 bg-form">
+                        <div class="bd-contact-form-wrapper mb-50">
+
+                            <form id="myForm" onsubmit="sendApplication(event)">
+                                <h2 class="bd-section-title fs-1">Umra safari uchun ariza</h2>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bd-contact-field mb-30">
+                                            <input class="form-select" name="name" type="text" placeholder="Ismingiz"
+                                                   style="border: 1px solid rgba(128, 128, 128, 0.282);" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-30 position-relative phone-number-input">
+                                            <span class="phone-number-prefix">+998</span>
+                                            <input id="phone" name="phone" class="form-select phone_number"
+                                                   placeholder="(00) 000 00 00"
+                                                   style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="bd-contact-field mb-30">
+                                            <select class="form-select" id="months" name="month" required>
+                                                <option value="" disabled selected>Safar oyi</option>
+                                                <option value="yanvar">Yanvar</option>
+                                                <option value="fevral">Fevral</option>
+                                                <option value="mart">Mart</option>
+                                                <option value="aprel">Aprel</option>
+                                                <option value="may">May</option>
+                                                <option value="iyun">Iyun</option>
+                                                <option value="iyul">Iyul</option>
+                                                <option value="avgust">Avgust</option>
+                                                <option value="sentabr">Sentabr</option>
+                                                <option value="oktabr">Oktabr</option>
+                                                <option value="noyabr">Noyabr</option>
+                                                <option value="dekabr">Dekabr</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-30">
+                                        <input type="number" name="people_count" class="form-select"
+                                               placeholder="Yo'lovchilar soni"
+                                               style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bd-contact-field mb-30">
+                                            <select id="application-tariffs" class="form-select" name="tarif" required>
+                                                <option value="" disabled selected>Tarifni tanlang</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bd-contact-field">
+                                            <button type="submit" class="theme-btn">Yuborish</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- contact area end here -->
 
         <!-- footer area start here -->
         <footer class="heading-bg">
@@ -490,10 +571,12 @@
     </main>
 
 
+    <script src="assets/js/api/application.js"></script>
     <script type="module">
-        import { getPlansDetails } from "./assets/js/api/plans.js";
+        import { getPlansDetails, getSelectPlans } from "./assets/js/api/plans.js";
 
         getPlansDetails()
+        getSelectPlans()
     </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
