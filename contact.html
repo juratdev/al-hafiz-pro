@@ -209,24 +209,62 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="bd-contact-form mb-30">
-                            <form action="#">
-                                <h4 class="bd-contact-form-title">Aloqa</h4>
-                                <div class="bd-contact-field mb-20">
-                                    <input type="text" placeholder="Ismingiz">
-                                </div>
-                                <div class="bd-contact-field mb-20">
-                                    <input class="phone_number" placeholder="Telefon raqamingiz">
-                                </div>
-                                <div class="bd-contact-field mb-20">
-                                    <input type="email" placeholder="Email">
-                                </div>
-                                <div class="bd-contact-field mb-20">
-                                    <textarea placeholder="Xabar"></textarea>
-                                </div>
-                                <div class="bd-contact-field">
-                                    <button type="submit" class="theme-btn theme-btn-rounded w-full">Yuborish</button>
+                    <div class="col-lg-6 bg-form">
+                        <div class="bd-contact-form-wrapper mb-50">
+                            <form id="myForm" onsubmit="sendApplication(event)">
+                                <h2 class="bd-section-title fs-1">Umra safari uchun ariza</h2>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bd-contact-field mb-30">
+                                            <input class="form-select" name="name" type="text" placeholder="Ismingiz"
+                                                   style="border: 1px solid rgba(128, 128, 128, 0.282);" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-30 position-relative phone-number-input">
+                                            <span class="phone-number-prefix">+998</span>
+                                            <input id="phone" name="phone" class="form-select phone_number"
+                                                   placeholder="(00) 000 00 00"
+                                                   style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="bd-contact-field mb-30">
+                                            <select class="form-select" id="months" name="month" required>
+                                                <option value="" disabled selected>Safar oyi</option>
+                                                <option value="yanvar">Yanvar</option>
+                                                <option value="fevral">Fevral</option>
+                                                <option value="mart">Mart</option>
+                                                <option value="aprel">Aprel</option>
+                                                <option value="may">May</option>
+                                                <option value="iyun">Iyun</option>
+                                                <option value="iyul">Iyul</option>
+                                                <option value="avgust">Avgust</option>
+                                                <option value="sentabr">Sentabr</option>
+                                                <option value="oktabr">Oktabr</option>
+                                                <option value="noyabr">Noyabr</option>
+                                                <option value="dekabr">Dekabr</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-30">
+                                        <input type="number" name="people_count" class="form-select"
+                                               placeholder="Yo'lovchilar soni"
+                                               style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bd-contact-field mb-30">
+                                            <select id="application-tariffs" class="form-select" name="tarif" required>
+                                                <option value="" disabled selected>Tarifni tanlang</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bd-contact-field">
+                                            <button type="submit" class="theme-btn">Yuborish</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -370,8 +408,14 @@
           
     </main>
 
-        
 
+
+    <script src="assets/js/api/application.js"></script>
+    <script type="module">
+        import {  getSelectPlans } from "./assets/js/api/plans.js";
+
+        getSelectPlans()
+    </script>
 
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
