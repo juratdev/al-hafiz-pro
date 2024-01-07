@@ -62,24 +62,24 @@
                             <div class="bd-main-menu d-flex align-items-center gap-5">
                                 <nav id="bd-mobile-menu">
                                     <ul>
-                                        <li><a href="#home">Bosh
+                                        <li><a href="#home" onclick="scrollToSection('home', event)">Bosh
                                                 sahifa</a>
 
                                         </li>
-                                        <li><a href="#about">Umra ziyorati</a>
+                                        <li><a  href="#about" onclick="scrollToSection('about', event)">Umra ziyorati</a>
 
                                         </li>
-                                        <li><a href="#pricing">Safar tariflari</a>
+                                        <li><a  href="#pricing" onclick="scrollToSection('pricing', event)">Safar tariflari</a>
 
                                         </li>
-                                        <li><a href="#choose">Biz haqimizda</a>
+                                        <li><a  href="#choose" onclick="scrollToSection('choose', event)">Biz haqimizda</a>
 
                                         </li>
 
-                                        <li><a href="#news">Yangiliklar</a>
+                                        <li><a  href="#news" onclick="scrollToSection('news', event)">Yangiliklar</a>
 
                                         </li>
-                                        <li><a href="#contact">Aloqa</a></li>
+                                        <li><a  href="#contact" onclick="scrollToSection('contact', event)">Aloqa</a></li>
                                     </ul>
                                 </nav>
                                 <div>
@@ -496,20 +496,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" id="news-row">
-
-                </div>
-                <div class="row">
-                    <div class="bd-slider-btn col-12 text-center" data-animation="fadeInUp" data-delay=".9s">
-                        <a href="news.html" class="theme-btn">Hamma yangiliklar</a>
-                    </div>
+                <div class="row mb-40" id="news-row"></div>
+                <div class="text-center" data-animation="fadeInUp" data-delay=".9s">
+                    <a href="news.html" class="theme-btn">Hamma yangiliklar</a>
                 </div>
             </div>
         </section>
         <!-- blog area end here -->
 
         <!-- contact area start here -->
-        <section class="bd-contact-area pt-50 pb-140">
+        <section id="contact" class="bd-contact-area pt-50 pb-140">
             <div class="container">
                 <div class="row d-flex justify-content-between align-items-center bd-contact-area-all">
                     <!-- map area start here -->
@@ -585,7 +581,7 @@
         <!-- contact area end here -->
 
         <!-- footer area start here -->
-        <footer id="contact" class="heading-bg">
+        <footer class="heading-bg">
             <div class="bd-footer-area pt-100 pb-60">
                 <div class="container">
                     <div class="row d-flex justify-content-between">
@@ -721,6 +717,7 @@
         getHomeNews();
         getSelectPlans()
     </script>
+    <script src="assets/js/scroll.js"></script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

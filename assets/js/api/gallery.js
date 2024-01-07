@@ -59,7 +59,7 @@ function renderGalleryItem(item){
     gallery.innerHTML += `
      <div class="swiper-slide">
         <div class="bd-portfolio bd-team-four mb-30">
-            ${item?.youtube_link ? `<iframe id="youtubeiframe_1_578762316" width="100%" height="500" src="${convertToEmbed(item?.youtube_link)}" frameborder="0" allowfullscreen=""></iframe>` : `<img src="${item.image}" alt="porfolio not found">`}
+            ${item.youtube_link ? `<iframe id="youtubeiframe_1_578762316" width="100%" height="500" src="https://www.youtube.com/embed/${convertToEmbed(item.youtube_link)}" frameborder="0" allowfullscreen=""></iframe>` : `<img src="${item.image}" alt="porfolio not found">`}
         </div>
      </div>`
 }

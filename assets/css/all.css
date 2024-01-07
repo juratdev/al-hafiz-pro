@@ -10,6 +10,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.bd-blog .bd-blog-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
