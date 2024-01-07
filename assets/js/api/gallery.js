@@ -19,7 +19,7 @@ function mountGallerySlider() {
             spaceBetween: 30,
             // direction: 'vertical',
             loop: true,
-            // grabCursor: true,
+            grabCursor: true,
             autoplay: {
                 delay: 5000,
             },

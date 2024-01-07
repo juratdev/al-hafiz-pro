@@ -222,8 +222,8 @@
         </section>
         <!-- blog area end here -->
 
-          <!-- pricing area start here -->
-        <section id="pricing" class="bd-pricing-area gray-bg pt-50 pb-55">
+        <!-- pricing area start here -->
+        <section id="pricing" class="bd-pricing-area gray-bg pt-75 pb-55">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -232,68 +232,12 @@
                         </div>
                     </div>
                 </div>
-                  <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="bd-pricing mb-30">
-                                    <div class="bd-pricing-title-wrapper text-center mb-65">
-                                        <h6 class="bd-pricing-subtitle mb-15">Standart tarif</h6>
-                                        <h6 class="bd-pricing-price">00<span>.00/so’m</span></h6>
-                                    </div>
-                                    <ul class="mb-80">
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>To’g’ridan to’g’ri aviaparvoz Tashkent-Jidda-Tashkent</li>
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>Barcha yo’nalishlar uchun zamonaviy va qulay avtobuslar</li>
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>Viza va tibbiy sug’urta</li>
-                                    </ul>
-                                    <div class="bd-pricing-btn">
-                                        <a href="contact.html" class="theme-btn">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="bd-pricing mb-30 bd-pricing-active">
-                                    <div class="bd-pricing-title-wrapper text-center mb-65">
-                                        <h6 class="bd-pricing-subtitle mb-15">Vip tarif</h6>
-                                        <h6 class="bd-pricing-price">00<span>.00/so’m</span></h6>
-                                    </div>
-                                    <ul class="mb-80">
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>To’g’ridan to’g’ri premium aviaparvoz Tashkent-Jidda-Tashkent</li>
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>Jidda aeroportidan kutib olish/kuzatish</li>
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>Viza va tibbiy sug’urta</li>
-                                    </ul>
-                                    <div class="bd-pricing-btn">
-                                        <a href="contact.html" class="theme-btn-black">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="bd-pricing mb-30">
-                                    <div class="bd-pricing-title-wrapper text-center mb-65">
-                                        <h6 class="bd-pricing-subtitle mb-15">Standart tarif</h6>
-                                        <h6 class="bd-pricing-price">00<span>.00/so’m</span></h6>
-                                    </div>
-                                    <ul class="mb-80">
-                                         <li style="line-height: 21px;"><i class="fal fa-check"></i>To’g’ridan to’g’ri aviaparvoz Tashkent-Jidda-Tashkent</li>
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>Barcha yo’nalishlar uchun zamonaviy va qulay avtobuslar</li>
-                                        <li style="line-height: 21px;"><i class="fal fa-check"></i>Viza va tibbiy sug’urta</li>
-                                    </ul>
-                                    <div class="bd-pricing-btn">
-                                        <a href="contact.html" class="theme-btn">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                <div class="row">
-                    <div class="bd-slider-btn col-12 text-center data-animation="fadeInUp" data-delay=".9s">
-                        <a href="#" class="theme-btn">Barcha tariflar</a>
-                    </div>
+                <div class="row mb-30" id="plan-row"></div>
+                <div class="text-center" data-animation="fadeInUp" data-delay=".9s">
+                    <a href="tariffs.html" class="theme-btn">Barcha tariflar</a>
                 </div>
             </div>
         </section>
-        <!-- pricing area end here -->
 
         
         <!-- footer area start here -->
@@ -420,9 +364,14 @@
           
     </main>
 
-        
 
 
+
+
+    <script type="module">
+        import {getHomePlans} from './assets/js/api/plans.js';
+        getHomePlans();
+    </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

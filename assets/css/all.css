@@ -509,7 +509,9 @@ footer.heading-bg .bd-copyright-area .bd-copyright p{
   margin-bottom: 20px;
   border-radius: 20px;
 }
-
+.bd-portfolio:before{
+  pointer-events: none;
+}
 .bd-section-mini-title-img img {
   background-size: contain;
   background-position: center;
