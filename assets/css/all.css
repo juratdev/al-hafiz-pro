@@ -298,6 +298,19 @@ footer.heading-bg .bd-copyright-area .bd-copyright p{
   background: var(--clr-bg-gray);
   border-radius: 10px;
 }
+.phone-number-input .form-select{
+  padding-left: 55px;
+}
+.phone-number-prefix{
+  position: absolute;
+  top: 50%;
+  transform:  translateY(-50%);
+  left: 10px;
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
 
 .bd-contact-field input {
   color: #000;

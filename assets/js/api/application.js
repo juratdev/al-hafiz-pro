@@ -4,9 +4,7 @@
 
 function sendApplication(event) {
   event.preventDefault();
-  const formValues = {
-    people_count: 1,
-  };
+  const formValues = {};
   for (const element of event.target.elements) {
     if (element.tagName === "INPUT" || element.tagName === "SELECT") {
       formValues[element.name] =

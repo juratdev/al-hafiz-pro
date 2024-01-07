@@ -459,8 +459,10 @@
                         <p style="color: #fff;">Raqamingizni qoldiring va biz siz bilan tez orada bog'lanamiz</p>
                         <form action="#">
                             <div class="d-flex gap-3 questions-form">
-                                <input id="phone" name="phone" id="phoneInput" class="form-select questions-input"
-                                    placeholder="Telefon raqamingiz" />
+                                <div class="position-relative phone-number-input">
+                                    <span class="phone-number-prefix">+998</span>
+                                    <input name="phone" id="phoneInput" class="phone_number form-select questions-input" placeholder="(00) 000 00 00" />
+                                </div>
                                 <a href="#" style="background-color: #FEC39A;" class="theme-btn">Yuborish</a>
                             </div>
                         </form>
@@ -516,18 +518,19 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="mb-30">
-                                            <input id="phone" name="phone" class="form-select"
-                                                placeholder="Telefon raqamingiz"
+                                        <div class="mb-30 position-relative phone-number-input">
+                                            <span class="phone-number-prefix">+998</span>
+                                            <input id="phone" name="phone" class="form-select phone_number"
+                                                placeholder="(00) 000 00 00"
                                                 style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="bd-contact-field mb-30">
                                             <select class="form-select" id="months" name="month" required>
                                                 <option value="" disabled selected>Safar oyi</option>
                                                 <option value="yanvar">Yanvar</option>
-                                                <option value="fevral">Fevarl</option>
+                                                <option value="fevral">Fevral</option>
                                                 <option value="mart">Mart</option>
                                                 <option value="aprel">Aprel</option>
                                                 <option value="may">May</option>
@@ -542,12 +545,16 @@
 
                                         </div>
                                     </div>
+                                    <div class="col-6 mb-30">
+                                        <input type="number" name="people_count" class="form-select"
+                                               placeholder="Yo'lovchilar soni"
+                                               style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                    </div>
                                     <div class="col-12">
                                         <div class="bd-contact-field mb-30">
                                             <select id="application-tariffs" class="form-select" name="tarif" required>
                                                 <option value="" disabled selected>Tarifni tanlang</option>
                                             </select>
-
                                         </div>
                                     </div>
                                     <div class="col-12">
