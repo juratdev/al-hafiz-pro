@@ -22,8 +22,11 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.mean-container .mean-nav ul li a{
+  border-top: none;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
 .btn-lang {
-  margin: 0 auto;
   text-align: center;
   padding: 8px 15px;
   background-color: #06635d;
@@ -62,6 +65,37 @@ input[type="number"] {
   width: 60px;
   height: 60px;
   margin-left: 20px;
+}
+#bd-mobile-menu ul li a.active{
+  color: #06635D;
+}
+#bd-mobile-menu ul li .contact{
+  background: #06635D;padding: 4px 12px;border-radius: 8px;
+  overflow: hidden;
+  transform: translateY(11px);
+}
+
+#bd-mobile-menu ul li .contact:before{
+  background-color: var(--clr-common-white);
+  content: "";
+  height: 150px;
+  left: -75px;
+  position: absolute;
+  top: -35px;
+  transform: rotate(35deg);
+  transition: all 1600ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 60px;
+  opacity: 0;
+}
+#bd-mobile-menu ul li:hover .contact,
+#bd-mobile-menu ul li .contact:hover{
+  color: #fff;
+}
+
+#bd-mobile-menu ul li .contact:hover:before{
+  left: 120%;
+  transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0.25;
 }
 
 footer.heading-bg{
