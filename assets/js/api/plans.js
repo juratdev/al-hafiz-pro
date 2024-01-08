@@ -115,7 +115,7 @@ function renderTariffSingle(data) {
   data.services.forEach((el) => {
     servicesList.innerHTML += `
     <div class="col-lg-2 col-md-4">
-        <div class="bd-service mb-30">
+        <div class="bd-service mb-30"  style="border-radius: 10px; padding: 25px 30px">
             <div class="bd-service-icon mb-20">
                 <img src="${el.icon}" alt="${el.name}">
             </div>

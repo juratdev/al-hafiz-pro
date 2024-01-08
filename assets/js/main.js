@@ -537,7 +537,6 @@ $(".popup-video").magnificPopup({
 
 // input number
 
-
 let phoneInput = document.querySelectorAll('.phone_number');
 
 phoneInput.forEach((item) => {
