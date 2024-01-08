@@ -96,19 +96,21 @@ function renderTariffSingle(data) {
 
   // Render Tariff Price List
   const priceList = document.getElementById("tariff-price-list");
+
   data.prices.forEach((el) => {
+    const peopleIcons = new Array(el.people_count)
+      .fill('<i class="fas fa-user" style="margin-left: 4px;"></i>')
+      .join("");
+
     priceList.innerHTML += `
-        <div class="price-info-title">
-            <p class="text-white">${el.people_count} kishilik</p>
-            ${new Array(el.people_count, "1")
-              .map(
-                () => '<i class="fas fa-user" style="margin-left: 4px;"></i>'
-              )
-              .join("")}
-            <h5 class="text-white">${el.price}$</h5>
-        </div>
+      <div class="price-info-title">
+          <p class="text-white">${el.people_count} kishilik</p>
+          ${peopleIcons}
+          <h5 class="text-white">${el.price}$</h5>
+      </div>
     `;
   });
+
 
   // Render Tariff Services
   const servicesList = document.getElementById("tariff-services");
@@ -134,7 +136,7 @@ function renderTariffSingle(data) {
 
   //  Render Makkah hotel name
   document.getElementById("makkah-hotel-name").innerText =
-    data.Makkah_hotel.name;
+    data.Makkah_hotel.name; 
 
   //  Render Madinah hotel name
   document.getElementById("madinah-hotel-name").innerText =
@@ -159,6 +161,8 @@ function renderTariffSingle(data) {
   // Render Tranport body
   document.getElementById("tariff-transport-body").innerText =
     data.transport.body;
+
+
 }
 
 export function getSelectPlans() {
@@ -176,3 +180,9 @@ export function getSelectPlans() {
       });
     });
 }
+
+
+// Render images
+// const imageUrl = "https://al-hafiz.uz/api/Makkah_hotel/image1";
+// document.getElementById("tariff-images").src = imageUrl;
+
