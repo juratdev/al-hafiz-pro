@@ -223,16 +223,20 @@
                             <form action="#">
                                 <h4 class="bd-contact-form-title">Aloqa</h4>
                                 <div class="bd-contact-field mb-20">
-                                    <input type="text" placeholder="Ismingiz">
+                                    <input class="form-select" name="name" type="text" placeholder="Ismingiz" style="border: 1px solid rgba(128, 128, 128, 0.282);" required>
+                                </div>
+                                <div class="mb-20 bd-contact-fiel  min-number">
+                                    
+                                    <input name="phone" class="form-select phone-two minnum phone" placeholder="(00) 000 00 00" style="background-color: #fff;"/>
+                                    <div class="min-number-main" style="top: 17px;">+998</div>
+                                    
                                 </div>
                                 <div class="bd-contact-field mb-20">
-                                    <input id="phone" placeholder="Telefon raqamingiz">
+                                    <input class="form-select" name="email" type="email" placeholder="Email" style="border: 1px solid rgba(128, 128, 128, 0.282);" required>
                                 </div>
                                 <div class="bd-contact-field mb-20">
-                                    <input type="email" placeholder="Email">
-                                </div>
-                                <div class="bd-contact-field mb-20">
-                                    <textarea placeholder="Xabar"></textarea>
+                                    <textarea class="form-select" name="text" type="textarea" style="border: 1px solid rgba(128, 128, 128, 0.282);" required placeholder="Xabar"></textarea>
+                                    
                                 </div>
                                 <div class="bd-contact-field">
                                     <button type="submit" class="theme-btn theme-btn-rounded w-full">Yuborish</button>
