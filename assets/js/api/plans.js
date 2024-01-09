@@ -151,15 +151,30 @@ function renderTariffSingle(data) {
   document.getElementById("madinah-hotel-distance").innerText =
     data.Madinah_hotel.distance;
 
+  // Render Makkah hotel image
+  document.getElementById("makkah-hotel-image-1").src = data.Makkah_hotel.image1 ?? 'assets/img/about/choose-1.1.png';
+  document.getElementById("makkah-hotel-image-2").src = data.Makkah_hotel.image2 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("makkah-hotel-image-3").src = data.Makkah_hotel.image3 ?? 'assets/img/about/choose-2.1.png';
+
+  // Render Madinah hotel image
+  document.getElementById("madinah-hotel-image-1").src = data.Madinah_hotel.image1 ?? 'assets/img/about/choose-1.1.png';
+  document.getElementById("madinah-hotel-image-2").src = data.Madinah_hotel.image2 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("madinah-hotel-image-3").src = data.Madinah_hotel.image3 ?? 'assets/img/about/choose-2.1.png';
+
+  // Render Transport image
+  document.getElementById("transport-image-1").src = data.transport.image1 ?? 'assets/img/about/choose-1.1.png';
+  document.getElementById("transport-image-2").src = data.transport.image2 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("transport-image-3").src = data.transport.image3 ?? 'assets/img/about/choose-2.1.png';
+
   // Render Transport title
   document.getElementById("tariff-transport-title").innerText =
     data.transport.title;
 
-  // Render Tranport subtitle
+  // Render Transport subtitle
   document.getElementById("tariff-transport-subtitle").innerText =
     data.transport.subtitle;
 
-  // Render Tranport body
+  // Render Transport body
   document.getElementById("tariff-transport-body").innerText =
     data.transport.body;
 

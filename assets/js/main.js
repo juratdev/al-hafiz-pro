@@ -545,9 +545,3 @@ phoneInput.forEach((item) => {
 		e.target.value = (x[1] ? '(' + x[1] : '') + (x[2] ? ') ' + x[2] : '') + (x[3] ? ' ' + x[3] : '') + (x[4] ? ' ' + x[4] : '');
 	});
 })
-
-// 		phoneInput.value = phoneInput.value.replace(/\D/g, '');
-// 		result.innerText = phoneInput.value;
-//
-// 		e.preventDefault();
-// });
