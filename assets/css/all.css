@@ -141,6 +141,9 @@ footer.heading-bg .bd-copyright-area {
 footer.heading-bg .bd-copyright-area .bd-copyright p {
   color: rgba(255, 255, 255, 0.7);
 }
+.cards-link-1:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .bd-slider-title {
   font-size: 64px;
@@ -417,13 +420,6 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   }
 }
 
-/* .bd-page-title-bg {
-  background-image: url("../img/about/about-img-1.1.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
 /* package section */
 .bd-page-package {
   padding: 140px 0 100px;
@@ -467,6 +463,12 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   padding: 20px;
   color: #000;
 }
+/* 
+@media only screen and (max-width: 800px) {
+  .tariff-transport-main #tariff-transport-title {
+    font-size: 16px;
+  }
+} */
 
 .price-date-title {
   color: #000;
@@ -499,8 +501,7 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   background: #e6eeed;
   padding: 40px;
   border-radius: 20px;
-  margin-bottom: 0
-;
+  margin-bottom: 0;
 }
 
 .bd-section-mini-title {
@@ -512,16 +513,22 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   margin-bottom: 20px;
   border-radius: 20px;
 }
-.bd-section-mini-title #tariff-transport-subtitle{
+.bd-section-mini-title #tariff-transport-subtitle {
   font-size: 18px;
   font-weight: 500;
   color: #000;
 }
-.hotel-images .bd-choose-img-inner-1{
+.hotel-images .bd-choose-img-inner-1 {
   margin-right: 0;
 }
 .bd-portfolio:before {
   pointer-events: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .tariff-transport-main #tariff-transport-title {
+    font-size: 16px;
+  }
 }
 .bd-section-mini-title-img img {
   background-size: contain;
