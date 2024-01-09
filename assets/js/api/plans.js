@@ -96,26 +96,28 @@ function renderTariffSingle(data) {
 
   // Render Tariff Price List
   const priceList = document.getElementById("tariff-price-list");
+
   data.prices.forEach((el) => {
+    const peopleIcons = new Array(el.people_count)
+      .fill('<i class="fas fa-user" style="margin-left: 4px;"></i>')
+      .join("");
+
     priceList.innerHTML += `
-        <div class="price-info-title">
-            <p class="text-white">${el.people_count} kishilik</p>
-            ${new Array(el.people_count, "1")
-              .map(
-                () => '<i class="fas fa-user" style="margin-left: 4px;"></i>'
-              )
-              .join("")}
-            <h5 class="text-white">${el.price}$</h5>
-        </div>
+      <div class="price-info-title">
+          <p class="text-white">${el.people_count} kishilik</p>
+          ${peopleIcons}
+          <h5 class="text-white">${el.price}$</h5>
+      </div>
     `;
   });
+
 
   // Render Tariff Services
   const servicesList = document.getElementById("tariff-services");
   data.services.forEach((el) => {
     servicesList.innerHTML += `
     <div class="col-lg-2 col-md-4">
-        <div class="bd-service mb-30">
+        <div class="bd-service mb-30"  style="border-radius: 10px; padding: 25px 30px">
             <div class="bd-service-icon mb-20">
                 <img src="${el.icon}" alt="${el.name}">
             </div>
@@ -134,7 +136,7 @@ function renderTariffSingle(data) {
 
   //  Render Makkah hotel name
   document.getElementById("makkah-hotel-name").innerText =
-    data.Makkah_hotel.name;
+    data.Makkah_hotel.name; 
 
   //  Render Madinah hotel name
   document.getElementById("madinah-hotel-name").innerText =
@@ -148,17 +150,34 @@ function renderTariffSingle(data) {
   document.getElementById("madinah-hotel-distance").innerText =
     data.Madinah_hotel.distance;
 
+  // Render Makkah hotel image
+  document.getElementById("makkah-hotel-image-1").src = data.Makkah_hotel.image1 ?? 'assets/img/about/choose-1.1.png';
+  document.getElementById("makkah-hotel-image-2").src = data.Makkah_hotel.image2 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("makkah-hotel-image-3").src = data.Makkah_hotel.image3 ?? 'assets/img/about/choose-2.1.png';
+
+  // Render Madinah hotel image
+  document.getElementById("madinah-hotel-image-1").src = data.Madinah_hotel.image1 ?? 'assets/img/about/choose-1.1.png';
+  document.getElementById("madinah-hotel-image-2").src = data.Madinah_hotel.image2 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("madinah-hotel-image-3").src = data.Madinah_hotel.image3 ?? 'assets/img/about/choose-2.1.png';
+
+  // Render Transport image
+  document.getElementById("transport-image-1").src = data.transport.image1 ?? 'assets/img/about/choose-1.1.png';
+  document.getElementById("transport-image-2").src = data.transport.image2 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("transport-image-3").src = data.transport.image3 ?? 'assets/img/about/choose-2.1.png';
+
   // Render Transport title
   document.getElementById("tariff-transport-title").innerText =
     data.transport.title;
 
-  // Render Tranport subtitle
+  // Render Transport subtitle
   document.getElementById("tariff-transport-subtitle").innerText =
     data.transport.subtitle;
 
-  // Render Tranport body
+  // Render Transport body
   document.getElementById("tariff-transport-body").innerText =
     data.transport.body;
+
+
 }
 
 export function getSelectPlans() {
@@ -176,3 +195,9 @@ export function getSelectPlans() {
       });
     });
 }
+
+
+// Render images
+// const imageUrl = "https://al-hafiz.uz/api/Makkah_hotel/image1";
+// document.getElementById("tariff-images").src = imageUrl;
+
