@@ -16,25 +16,37 @@ export function getHomePlans() {
       },
     })
     .then((response) => {
-      response.data.results.forEach((el, index) => renderTariffsCard(el, index, planRows));
+      response.data.results.forEach((el, index) =>
+        renderTariffsCard(el, index, planRows)
+      );
     });
 }
 
-const plansListRows = document.getElementById('plans-list-row');
-
+const plansListRows = document.getElementById("plans-list-row");
 
 const listParams = {
-    limit: 3,
-    offset: 0
-}
+  limit: 3,
+  offset: 0,
+};
 export function getTariffs() {
-    axios.get('tarif/', {
-        params: listParams
+  axios
+    .get("tarif/", {
+      params: listParams,
     })
     .then((response) => {
-        response.data.results.forEach((el, index) => renderTariffsCard(el, index, plansListRows, `background-color: ${index % 2 === 0 ? '#f2f2f2' : '#06635D' };`))
-        document.getElementById('tariffs-load-more').style.display = !response.data.next ? 'none' : 'inline-flex';
-    })
+      response.data.results.forEach((el, index) =>
+        renderTariffsCard(
+          el,
+          index,
+          plansListRows,
+          `background-color: ${index % 2 === 0 ? "#f2f2f2" : "#06635D"};`
+        )
+      );
+      document.getElementById("tariffs-load-more").style.display = !response
+        .data.next
+        ? "none"
+        : "inline-flex";
+    });
 }
 
 export function loadMoreTariffs() {
@@ -45,16 +57,23 @@ export function loadMoreTariffs() {
 function renderTariffsCard(item, index, playground, cardStyle = "") {
   playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
-            <div class="bd-pricing ${index%2 === 1 ? 'bd-pricing-active' : ''} h-100 d-flex flex-column justify-content-between" style="${cardStyle}">
+            <div class="bd-pricing ${
+              index % 2 === 1 ? "bd-pricing-active" : ""
+            } h-100 d-flex flex-column justify-content-between" style="${cardStyle}">
                 <div>
                 <div class="bd-pricing-title-wrapper text-center mb-20">
                     <h6 class="bd-pricing-subtitle mb-15">${item.title}</h6>
-                    <h6 class="bd-pricing-price">$${formatMoneyDecimal(item.price)}</h6>
+                    <h6 class="bd-pricing-price">$${formatMoneyDecimal(
+                      item.price
+                    )}</h6>
                 </div>
                 <ul class="mb-40">
-                    ${
-                        item.services.map((el) => `<li style="line-height: 21px;"><i class="fal fa-check"></i>${el.name}</li>`).join("")
-                    }
+                    ${item.services
+                      .map(
+                        (el) =>
+                          `<li style="line-height: 21px;"><i class="fal fa-check"></i>${el.name}</li>`
+                      )
+                      .join("")}
                 </ul>
                 </div>
                 <div class="bd-pricing-btn">
@@ -67,11 +86,15 @@ function renderTariffsCard(item, index, playground, cardStyle = "") {
      `;
 }
 
+const preloader = document.getElementById("preloader");
+
 export function getPlansDetails() {
-  axios.get(`tarif/${getSingleIdFromUrl()}/`).then((response) => {
-    renderTariffSingle(response.data);
-    console.log(response.data);
-  });
+  axios
+    .get(`tarif/${getSingleIdFromUrl()}/`)
+    .then((response) => {
+      renderTariffSingle(response.data);
+    })
+    .finally(() => (preloader.style.display = "none"));
 }
 
 function renderTariffSingle(data) {
@@ -112,7 +135,6 @@ function renderTariffSingle(data) {
     `;
   });
 
-
   // Render Tariff Services
   const servicesList = document.getElementById("tariff-services");
   data.services.forEach((el) => {
@@ -137,7 +159,7 @@ function renderTariffSingle(data) {
 
   //  Render Makkah hotel name
   document.getElementById("makkah-hotel-name").innerText =
-    data.Makkah_hotel.name; 
+    data.Makkah_hotel.name;
 
   //  Render Madinah hotel name
   document.getElementById("madinah-hotel-name").innerText =
@@ -152,19 +174,28 @@ function renderTariffSingle(data) {
     data.Madinah_hotel.distance;
 
   // Render Makkah hotel image
-  document.getElementById("makkah-hotel-image-1").src = data.Makkah_hotel.image1 ?? 'assets/img/about/choose-1.1.png';
-  document.getElementById("makkah-hotel-image-2").src = data.Makkah_hotel.image2 ?? 'assets/img/about/choose-2.1.png';
-  document.getElementById("makkah-hotel-image-3").src = data.Makkah_hotel.image3 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("makkah-hotel-image-1").src =
+    data.Makkah_hotel.image1 ?? "assets/img/about/choose-1.1.png";
+  document.getElementById("makkah-hotel-image-2").src =
+    data.Makkah_hotel.image2 ?? "assets/img/about/choose-2.1.png";
+  document.getElementById("makkah-hotel-image-3").src =
+    data.Makkah_hotel.image3 ?? "assets/img/about/choose-2.1.png";
 
   // Render Madinah hotel image
-  document.getElementById("madinah-hotel-image-1").src = data.Madinah_hotel.image1 ?? 'assets/img/about/choose-1.1.png';
-  document.getElementById("madinah-hotel-image-2").src = data.Madinah_hotel.image2 ?? 'assets/img/about/choose-2.1.png';
-  document.getElementById("madinah-hotel-image-3").src = data.Madinah_hotel.image3 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("madinah-hotel-image-1").src =
+    data.Madinah_hotel.image1 ?? "assets/img/about/choose-1.1.png";
+  document.getElementById("madinah-hotel-image-2").src =
+    data.Madinah_hotel.image2 ?? "assets/img/about/choose-2.1.png";
+  document.getElementById("madinah-hotel-image-3").src =
+    data.Madinah_hotel.image3 ?? "assets/img/about/choose-2.1.png";
 
   // Render Transport image
-  document.getElementById("transport-image-1").src = data.transport.image1 ?? 'assets/img/about/choose-1.1.png';
-  document.getElementById("transport-image-2").src = data.transport.image2 ?? 'assets/img/about/choose-2.1.png';
-  document.getElementById("transport-image-3").src = data.transport.image3 ?? 'assets/img/about/choose-2.1.png';
+  document.getElementById("transport-image-1").src =
+    data.transport.image1 ?? "assets/img/about/choose-1.1.png";
+  document.getElementById("transport-image-2").src =
+    data.transport.image2 ?? "assets/img/about/choose-2.1.png";
+  document.getElementById("transport-image-3").src =
+    data.transport.image3 ?? "assets/img/about/choose-2.1.png";
 
   // Render Transport title
   document.getElementById("tariff-transport-title").innerText =
@@ -177,8 +208,6 @@ function renderTariffSingle(data) {
   // Render Transport body
   document.getElementById("tariff-transport-body").innerText =
     data.transport.body;
-
-
 }
 
 export function getSelectPlans() {
@@ -196,5 +225,3 @@ export function getSelectPlans() {
       });
     });
 }
-
-
