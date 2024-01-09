@@ -1,6 +1,6 @@
 // const axios = require('axios');
 import axios from './axios.js'
-import {getSingleIdFromUrl} from "../helpers.js";
+import {getSingleIdFromUrl, formatDate} from "../helpers.js";
 
 const newsRows = document.getElementById('news-row');
 
@@ -48,7 +48,7 @@ function renderNewsCard(item, playground){
                     <div>
                         <div class="bd-blog-meta mb-15">
                             <ul>
-                                <li><a href="news-details.html"><i class="flaticon-calendar"></i>21 Feb 2022</a>
+                                <li><a href="news-details.html" id="news-start-time"><i class="flaticon-calendar"></i>21 Feb 2022</a>
                                 </li>
                             </ul>
                         </div>
@@ -65,6 +65,7 @@ function renderNewsCard(item, playground){
      `
 }
 
+
 export function getNewsDetails() {
     axios.get(`news/${getSingleIdFromUrl()}/`)
     .then((response) => {
@@ -72,5 +73,16 @@ export function getNewsDetails() {
         document.querySelectorAll('.news-details-title')?.forEach((el) => el.innerHTML = item.title);
         document.getElementById('news-details-content').innerHTML = item.body;
         document.getElementById('news-details-image').src = item.image;
+        renderNewsSingle(item)
     })
+}
+
+
+function renderNewsSingle(data) {
+
+  // Render News Start Date
+  document.getElementById("news-start-time").innerText = formatDate(
+    data.start_time
+  );
+
 }

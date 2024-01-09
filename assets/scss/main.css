@@ -4236,6 +4236,7 @@ input.main-search-input:-ms-input-placeholder {
   width: 100%;
 }
 .bd-blog .bd-blog-img {
+  aspect-ratio: 1/1;
   overflow: hidden;
 }
 .bd-blog:hover .bd-blog-img img {
