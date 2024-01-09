@@ -1,3 +1,5 @@
 .idea
 .vscode
 .htaccess
+yarn.lock
+node_modules
