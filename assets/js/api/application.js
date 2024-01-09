@@ -28,7 +28,7 @@ contactForm.addEventListener("submit", sendContactForm)
 function sendContactForm(event) {
     event.preventDefault()
     const phoneNumber = event.target.querySelector("#contact-phone-input")
-    axios.post(`https://api.telegram.org/bot6970135688:AAEBbc60YQnwnnAZrUxlDh9Vb-RMtQkhtQ8/sendMessage?chat_id=-4088019881&text=${"+998" + phoneNumber.value.replace(/\D/g, "")}&parse_mode=html` )
+    axios.post(`https://api.telegram.org/bot6970135688:AAEBbc60YQnwnnAZrUxlDh9Vb-RMtQkhtQ8/sendMessage?chat_id=-4088019881&text=${"Номер для связи: +998" + phoneNumber.value.replace(/\D/g, "")}&parse_mode=html` )
         .then(() => {
             alert("Ma'lumotingiz muvaffaqiyatli yuborildi.");
             phoneNumber.value = "";

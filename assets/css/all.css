@@ -499,6 +499,8 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   background: #e6eeed;
   padding: 40px;
   border-radius: 20px;
+  margin-bottom: 0
+;
 }
 
 .bd-section-mini-title {
@@ -509,6 +511,14 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   padding: 20px 40px;
   margin-bottom: 20px;
   border-radius: 20px;
+}
+.bd-section-mini-title #tariff-transport-subtitle{
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+.hotel-images .bd-choose-img-inner-1{
+  margin-right: 0;
 }
 .bd-portfolio:before {
   pointer-events: none;
@@ -718,5 +728,5 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   }
 }
 #tariff-transport-body {
-  font-weight: 500;
+  font-weight: 400;
 }
