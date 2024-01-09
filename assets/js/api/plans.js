@@ -70,6 +70,7 @@ function renderTariffsCard(item, index, playground, cardStyle = "") {
 export function getPlansDetails() {
   axios.get(`tarif/${getSingleIdFromUrl()}/`).then((response) => {
     renderTariffSingle(response.data);
+    console.log(response.data);
   });
 }
 
@@ -181,8 +182,4 @@ export function getSelectPlans() {
     });
 }
 
-
-// Render images
-// const imageUrl = "https://al-hafiz.uz/api/Makkah_hotel/image1";
-// document.getElementById("tariff-images").src = imageUrl;
 
