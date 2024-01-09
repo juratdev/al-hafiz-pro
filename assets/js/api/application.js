@@ -1,6 +1,4 @@
-// const axios = require('axios');
 // import axios from './axios.js'
-// import {getSingleIdFromUrl} from "../helpers.js";
 
 function sendApplication(event) {
   event.preventDefault();
@@ -15,14 +13,25 @@ function sendApplication(event) {
   }
   axios
     .post("https://al-hafiz.uz/api/application/", formValues)
-    .then((response) => {
+    .then(() => {
       alert("Ma'lumotingiz muvaffaqiyatli yuborildi.");
       for (const element of event.target.elements) {
         if (element.tagName === "INPUT" || element.tagName === "SELECT") {
           element.value = "";
         }
       }
-      //       form.reset();
-      //       form.querySelector(".alert-success").style.display = "block";
     });
+}
+
+const contactForm = document.querySelector("#contact-form");
+contactForm.addEventListener("submit", sendContactForm)
+function sendContactForm(event) {
+    event.preventDefault()
+    const phoneNumber = event.target.querySelector("#contact-phone-input")
+    axios.post(`https://api.telegram.org/bot6970135688:AAEBbc60YQnwnnAZrUxlDh9Vb-RMtQkhtQ8/sendMessage?chat_id=-4088019881&text=${"+998" + phoneNumber.value.replace(/\D/g, "")}&parse_mode=html` )
+        .then(() => {
+            alert("Ma'lumotingiz muvaffaqiyatli yuborildi.");
+            phoneNumber.value = "";
+        });
+    console.log(phoneNumber)
 }
