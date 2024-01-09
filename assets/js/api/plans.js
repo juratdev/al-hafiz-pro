@@ -1,4 +1,3 @@
-// const axios = require('axios');
 import axios from "./axios.js";
 import {
   formatMoneyDecimal,
@@ -9,6 +8,7 @@ import {
 const planRows = document.getElementById("plan-row");
 
 export function getHomePlans() {
+  renderLoadingTariffs(planRows, 3);
   axios
     .get("tarif/", {
       params: {
@@ -19,7 +19,8 @@ export function getHomePlans() {
       response.data.results.forEach((el, index) =>
         renderTariffsCard(el, index, planRows)
       );
-    });
+    })
+    .finally(() => removeLoadingTariffs());
 }
 
 const plansListRows = document.getElementById("plans-list-row");
@@ -29,6 +30,7 @@ const listParams = {
   offset: 0,
 };
 export function getTariffs() {
+  renderLoadingTariffs(plansListRows, 3, `background-color: "#f2f2f2"};`);
   axios
     .get("tarif/", {
       params: listParams,
@@ -46,7 +48,8 @@ export function getTariffs() {
         .data.next
         ? "none"
         : "inline-flex";
-    });
+    })
+    .finally(() => removeLoadingTariffs());
 }
 
 export function loadMoreTariffs() {
@@ -84,6 +87,58 @@ function renderTariffsCard(item, index, playground, cardStyle = "") {
             </div>
         </div>
      `;
+}
+
+function renderLoadingTariffs(playground, count, cardStyle = "") {
+  for (let i = 0; i < count; i++) {
+    playground.innerHTML += `
+      <div class="col-lg-4 col-md-6 tariffs-loading">
+          <div class="bd-pricing
+           h-100 d-flex flex-column justify-content-between" style="${cardStyle}">
+              <div>
+              <div class="bd-pricing-title-wrapper text-center mb-20">
+                  <h6 class="shimmer w-80 mx-auto mb-15" style="height: 28px;"></h6>
+                  <h6 class="bd-pricing-price shimmer w-75 mx-auto" style="height: 70px;"></h6>
+              </div>
+              <ul class="mb-40">
+                  <li class="d-flex align-items-center gap-2">
+                    <div class="shimmer flex-sh" style="width: 20px; height: 20px;border-radius: 4px"></div>
+                    <div class="shimmer" style="width: 100%; height: 20px;border-radius: 4px"></div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                    <div class="shimmer flex-sh" style="width: 20px; height: 20px;border-radius: 4px"></div>
+                    <div class="shimmer" style="width: 100%; height: 20px;border-radius: 4px"></div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                    <div class="shimmer flex-sh" style="width: 20px; height: 20px;border-radius: 4px"></div>
+                    <div class="shimmer" style="width: 100%; height: 20px;border-radius: 4px"></div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                    <div class="shimmer flex-sh" style="width: 20px; height: 20px;border-radius: 4px"></div>
+                    <div class="shimmer" style="width: 100%; height: 20px;border-radius: 4px"></div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                    <div class="shimmer flex-sh" style="width: 20px; height: 20px;border-radius: 4px"></div>
+                    <div class="shimmer" style="width: 100%; height: 20px;border-radius: 4px"></div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                    <div class="shimmer flex-sh" style="width: 20px; height: 20px;border-radius: 4px"></div>
+                    <div class="shimmer" style="width: 100%; height: 20px;border-radius: 4px"></div>
+                  </li>
+              </ul>
+              </div>
+              <div class="shimmer w-100" style="height: 50px;">
+
+              </div>
+          </div>
+      </div>
+   `;
+  }
+}
+
+function removeLoadingTariffs() {
+  const cards = document.querySelectorAll(".tariffs-loading");
+  cards.forEach((el) => (el.style.display = "none"));
 }
 
 const preloader = document.getElementById("preloader");

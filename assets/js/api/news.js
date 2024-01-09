@@ -113,17 +113,22 @@ function removeLoadingCards() {
     el.style.display = "none";
   });
 }
-
+const preloader = document.getElementById("preloader");
 export function getNewsDetails() {
-  axios.get(`news/${getSingleIdFromUrl()}/`).then((response) => {
-    const item = response.data;
-    document
-      .querySelectorAll(".news-details-title")
-      ?.forEach((el) => (el.innerHTML = item.title));
-    document.getElementById("news-details-content").innerHTML = item.body;
-    document.getElementById("news-details-image").src = item.image;
-    renderNewsSingle(item);
-  });
+  axios
+    .get(`news/${getSingleIdFromUrl()}/`)
+    .then((response) => {
+      const item = response.data;
+      document
+        .querySelectorAll(".news-details-title")
+        ?.forEach((el) => (el.innerHTML = item.title));
+      document.getElementById("news-details-content").innerHTML = item.body;
+      document.getElementById("news-details-image").src = item.image;
+      renderNewsSingle(item);
+    })
+    .finally(() => {
+      preloader.style.display = "none";
+    });
 }
 
 function renderNewsSingle(data) {

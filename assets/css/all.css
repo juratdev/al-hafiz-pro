@@ -380,7 +380,7 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
 /* questions */
 
 .questions {
-  background-image: url("/assets/img/pattern.webp");
+  background-image: url("../img/pattern.webp");
   background-size: cover;
   background-position: center;
 }
