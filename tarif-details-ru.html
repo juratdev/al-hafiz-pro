@@ -30,6 +30,15 @@
 <body>
 
 
+<!-- preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- preloader end  -->
+
     <!-- back to top start -->
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -70,7 +79,7 @@
                                         <li><a href="contact-ru.html" class="contact">Контакт</a></li>
                                     </ul>
                                 </nav>
-                                <a href="./tarif-details.html" class="theme-btn btn-lang"
+                                <a  class="theme-btn btn-lang tariff-details-language"
                                     style="padding: 0 12px;line-height: 32px;height: 32px;">Uz</a>
                             </div>
 
@@ -94,7 +103,7 @@
                 <div class="bd-mobile-menu"></div>
                 <div class="contact-infos mb-30">
                     <div class="contact-list mb-30">
-                        <a href="./news-details.html" class="theme-btn" style="height: 40px; line-height: 40px;padding: 0 16px">ru</a>
+                        <a class="theme-btn tariff-details-language" style="height: 40px; line-height: 40px;padding: 0 16px">ru</a>
                         <h4 style="margin-top: 20px;">Contact Info</h4>
 
                         <ul>
@@ -236,7 +245,7 @@
 
                                 <div class="bd-section-title-wrapper-1 mb-35">
                                     <h5 id="makkah-hotel-name"></h5>
-                                    <p>Расстояние: <span id="makkah-hotel-distance"></span>m</p>
+                                    <p>Расстояние: <span id="makkah-hotel-distance"></span>м</p>
                                 </div>
 
                             </div>
@@ -277,7 +286,7 @@
                             <div class="bd-choose-text mb-30 z-index d-flex justify-content-end">
                                 <div class="bd-section-title-wrapper-1 mb-35">
                                     <h5 id="madinah-hotel-name"></h5>
-                                    <p>Расстояние: <span id="madinah-hotel-distance"></span>m</p>
+                                    <p>Расстояние: <span id="madinah-hotel-distance"></span>м</p>
                                 </div>
 
                             </div>
@@ -552,9 +561,11 @@
     <script src="assets/js/api/application.js"></script>
     <script type="module">
         import { getPlansDetails, getSelectPlans } from "./assets/js/api/plans.js";
+        import {changeLanguageSingle} from "./assets/js/helpers.js";
 
         getPlansDetails('ru')
         getSelectPlans('ru')
+        changeLanguageSingle('tarif-details', 'tariff-details-language')
     </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>

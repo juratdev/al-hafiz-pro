@@ -159,12 +159,12 @@ export function getPlansDetails(lang = 'uz') {
       }
     })
     .then((response) => {
-      renderTariffSingle(response.data);
+      renderTariffSingle(response.data, lang);
     })
     .finally(() => (preloader.style.display = "none"));
 }
 
-function renderTariffSingle(data) {
+function renderTariffSingle(data, lang) {
   // Render Tariff Title
   document
     .querySelectorAll(".tariff-title")
@@ -173,16 +173,16 @@ function renderTariffSingle(data) {
   // Render Tariff Subtitle
   document.getElementById(
     "tariff-subtitle"
-  ).innerText = `Madina: ${data.Madinah_hotel.name} - ${data.days_in_Madinah} Kecha, Makka: ${data.Makkah_hotel.name} - ${data.days_in_Makkah} Kecha`;
+  ).innerHTML = lang === 'ru' ? `Медина: ${data.Madinah_hotel.name} - ${data.days_in_Madinah} ночей, <br> Мекка: ${data.Makkah_hotel.name} - ${data.days_in_Makkah} ночей` : `Madina: ${data.Madinah_hotel.name} - ${data.days_in_Madinah} Kecha,<br> Makka: ${data.Makkah_hotel.name} - ${data.days_in_Makkah} Kecha`;
 
   // Render Tariff Start Date
   document.getElementById("tariff-start-time").innerText = formatDate(
-    data.start_time
+    data.start_time, lang
   );
 
   // Render Tariff  Date
   document.getElementById("tariff-end-time").innerText = formatDate(
-    data.end_time
+    data.end_time, lang
   );
 
   // Render Tariff Price List
@@ -195,7 +195,7 @@ function renderTariffSingle(data) {
 
     priceList.innerHTML += `
       <div class="price-info-title">
-          <p class="text-white">${el.people_count} kishilik</p>
+          <p class="text-white">${lang === 'ru' ? 'Пассажиры' : 'Yo\'lovchilar'}: ${el.people_count} </p>
           ${peopleIcons}
           <h5 class="text-white">${el.price}$</h5>
       </div>

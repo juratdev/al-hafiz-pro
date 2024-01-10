@@ -31,12 +31,12 @@
 
 
     <!-- preloader -->
-    <!-- <div id="preloader">
+    <div id="preloader">
         <div class="preloader">
             <span></span>
             <span></span>
         </div>
-    </div> -->
+    </div>
     <!-- preloader end  -->
 
     <!-- back to top start -->
@@ -81,7 +81,7 @@
                                         <li><a href="contact.html" class="contact">Aloqa</a></li>
                                     </ul>
                                 </nav>
-                                <a href="./tarif-details-ru.html" class="theme-btn btn-lang" style="padding: 0 12px;line-height: 32px;height: 32px;">ru</a>
+                                <a  class="theme-btn btn-lang tariff-details-language" style="padding: 0 12px;line-height: 32px;height: 32px;">ru</a>
                             </div>
 
                             <!-- mobile menu activation -->
@@ -104,7 +104,7 @@
                 <div class="bd-mobile-menu"></div>
                 <div class="contact-infos mb-30">
                     <div class="contact-list mb-30">
-                        <a href="./tarif-details-ru.html" class="theme-btn" style="height: 40px; line-height: 40px;padding: 0 16px">ru</a>
+                        <a class="theme-btn tariff-details-language" style="height: 40px; line-height: 40px;padding: 0 16px">ru</a>
                         <h4 style="margin-top: 20px;">Contact Info</h4>
 
                         <ul>
@@ -557,9 +557,12 @@
     <script src="assets/js/api/application.js"></script>
     <script type="module">
         import { getPlansDetails, getSelectPlans } from "./assets/js/api/plans.js";
+        import {changeLanguageSingle} from "./assets/js/helpers.js";
 
         getPlansDetails()
         getSelectPlans()
+
+        changeLanguageSingle('tarif-details', 'tariff-details-language', 'ru')
     </script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery.min.js"></script>
