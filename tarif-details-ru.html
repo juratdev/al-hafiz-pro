@@ -54,20 +54,20 @@
                                     <ul>
                                         <li><a href="index-ru.html" class="active">Главная</a>
                                         </li>
-                                        <li><a href="umra.html">Умра</a>
+                                        <li><a href="umra-ru.html">Умра</a>
 
                                         </li>
-                                        <li><a href="tariffs.html">Тарифы</a>
+                                        <li><a href="tariffs-ru.html">Тарифы</a>
 
                                         </li>
                                         <li>
-                                            <a href="about.html">О нас</a>
+                                            <a href="about-ru.html">О нас</a>
                                         </li>
 
-                                        <li><a href="news.html">Новости</a>
+                                        <li><a href="news-ru.html">Новости</a>
 
                                         </li>
-                                        <li><a href="contact.html" class="contact">Контакт</a></li>
+                                        <li><a href="contact-ru.html" class="contact">Контакт</a></li>
                                     </ul>
                                 </nav>
                                 <a href="./tarif-details.html" class="theme-btn btn-lang"
@@ -347,65 +347,69 @@
                     <!-- map area start here -->
                     <div class="bd-map-area col-lg-6">
                         <div class="bd-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2998.0864487757626!2d69.2600110760544!3d41.285222971313125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE3JzA2LjgiTiA2OcKwMTUnNDUuMyJF!5e0!3m2!1sru!2s!4v1704637291577!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2998.0864487757626!2d69.2600110760544!3d41.285222971313125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE3JzA2LjgiTiA2OcKwMTUnNDUuMyJF!5e0!3m2!1sru!2s!4v1704637291577!5m2!1sru!2s"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     <!-- map area end here -->
 
                     <div class="col-lg-6 bg-form">
                         <div class="bd-contact-form-wrapper mb-50">
+
                             <form id="myForm" onsubmit="sendApplication(event)">
-                                <h2 class="bd-section-title fs-1">Umra safari uchun ariza</h2>
+                                <h2 class="bd-section-title fs-1">Заявка на поездку в Умру</h2>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="bd-contact-field mb-30">
-                                            <input class="form-select" name="name" type="text" placeholder="Ismingiz"
-                                                   style="border: 1px solid rgba(128, 128, 128, 0.282);" required>
+                                            <input class="form-select" name="name" type="text" placeholder="Имя"
+                                                style="border: 1px solid rgba(128, 128, 128, 0.282);" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="mb-30 position-relative phone-number-input">
                                             <span class="phone-number-prefix">+998</span>
                                             <input id="phone" name="phone" class="form-select phone_number"
-                                                   placeholder="(00) 000 00 00"
-                                                   style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                                placeholder="(00) 000 00 00"
+                                                style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="bd-contact-field mb-30">
                                             <select class="form-select" id="months" name="month" required>
-                                                <option value="" disabled selected>Safar oyi</option>
-                                                <option value="yanvar">Yanvar</option>
-                                                <option value="fevral">Fevral</option>
-                                                <option value="mart">Mart</option>
-                                                <option value="aprel">Aprel</option>
-                                                <option value="may">May</option>
-                                                <option value="iyun">Iyun</option>
-                                                <option value="iyul">Iyul</option>
-                                                <option value="avgust">Avgust</option>
-                                                <option value="sentabr">Sentabr</option>
-                                                <option value="oktabr">Oktabr</option>
-                                                <option value="noyabr">Noyabr</option>
-                                                <option value="dekabr">Dekabr</option>
+                                                <option value="" disabled selected>Дата</option>
+                                                <option value="yanvar">Январь</option>
+                                                <option value="fevral">Февраль</option>
+                                                <option value="mart">Март</option>
+                                                <option value="aprel">Апрель</option>
+                                                <option value="may">Май</option>
+                                                <option value="iyun">Июнь</option>
+                                                <option value="iyul">Июль</option>
+                                                <option value="avgust">Август</option>
+                                                <option value="sentabr">Сентябрь</option>
+                                                <option value="oktabr">Октябрь</option>
+                                                <option value="noyabr">Ноябрь</option>
+                                                <option value="dekabr">Декабрь</option>
                                             </select>
 
                                         </div>
                                     </div>
                                     <div class="col-6 mb-30">
                                         <input type="number" name="people_count" class="form-select"
-                                               placeholder="Yo'lovchilar soni"
-                                               style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
+                                            placeholder="Количество пассажиров"
+                                            style="border: 1px solid rgba(128, 128, 128, 0.282);" required />
                                     </div>
                                     <div class="col-12">
                                         <div class="bd-contact-field mb-30">
                                             <select id="application-tariffs" class="form-select" name="tarif" required>
-                                                <option value="" disabled selected>Tarifni tanlang</option>
+                                                <option value="" disabled selected>Выберите тариф</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="bd-contact-field">
-                                            <button type="submit" class="theme-btn">Yuborish</button>
+                                            <button type="submit" class="theme-btn">Отправить</button>
                                         </div>
                                     </div>
                                 </div>
@@ -427,9 +431,9 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="bd-footer-widget footer-col-1 mb-30">
                                 <div class="bd-footer-info">
-                                    <h5 class="bd-footer-widget-title mb-35">Bog'lanish</h5>
+                                    <h5 class="bd-footer-widget-title mb-35">Контакты</h5>
                                     <div class="bd-footer-info-item mb-10">
-                                        <h6>Aloqa: </h6>
+                                        <h6>Связь: </h6>
                                         <a href="tel:+998 (71) 2303388" target="_blank">+998 (71) 2303388</a>
                                     </div>
                                     <div class="bd-footer-info-item mb-10">
@@ -437,29 +441,29 @@
                                         <a href="mailto:info@al-hafiz.uz" target="_blank">info@al-hafiz.uz</a>
                                     </div>
                                     <div class="bd-footer-info-item">
-                                        <h6>Ofis manzili :</h6>
+                                        <h6>Наш адрес :</h6>
                                         <a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFiSkwHQFprfX55dHxmYQ==/?ll=69.259075%2C41.284513&z=16"
-                                           target="_blank">Toshkent, Yakkasaroy tumani, Humo 57</a>
+                                            target="_blank">Toshkent, Yakkasaroy tumani, Humo 57</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="bd-footer-widget footer-col-2 mb-30">
-                                <h5 class="bd-footer-widget-title mb-35">Havolalar</h5>
+                                <h5 class="bd-footer-widget-title mb-35">Меню</h5>
                                 <ul>
-                                    <li><a href="#home">Bosh sahifa</a></li>
-                                    <li><a href="#choose">Biz haqimizda</a></li>
-                                    <li><a href="#pricing">Safar tariflari</a></li>
-                                    <li><a href="#service">Bizning afzalliklarimiz</a></li>
-                                    <li><a href="#photo">Foto galereya</a></li>
-                                    <li><a href="#news">Yangiliklar</a></li>
+                                    <li><a href="#home">Главная</a></li>
+                                    <li><a href="#choose">О нас</a></li>
+                                    <li><a href="#pricing">Тарифы</a></li>
+                                    <li><a href="#service">Преимущество</a></li>
+                                    <li><a href="#photo">Фото Галерея</a></li>
+                                    <li><a href="#news">Новости</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <div class="bd-footer-widget footer-col-4 mb-30">
-                                <h5 class="bd-footer-widget-title mb-40">Ijtimoiy Tarmoqlar</h5>
+                                <h5 class="bd-footer-widget-title mb-40">Социальная сеть</h5>
                                 <div class="d-flex gap-5 bd-footer-all">
                                     <div class="bd-footer-socila">
                                         <!--                                        <a href="#" class="socila-link" target="_blank">-->
@@ -474,7 +478,8 @@
                                             </div>
                                             <span>info@al-hafiz.uz</span>
                                         </a>
-                                        <a href="https://www.instagram.com/alhafiz_travel/" class="socila-link" target="_blank">
+                                        <a href="https://www.instagram.com/alhafiz_travel/" class="socila-link"
+                                            target="_blank">
                                             <div>
                                                 <img src="./assets/img/footer/instagram.svg" alt="instagram">
                                             </div>
