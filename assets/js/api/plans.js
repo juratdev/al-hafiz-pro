@@ -7,17 +7,21 @@ import {
 
 const planRows = document.getElementById("plan-row");
 
-export function getHomePlans() {
+export function getHomePlans(lang = 'uz') {
   renderLoadingTariffs(planRows, 3);
   axios
     .get("tarif/", {
       params: {
         limit: 3,
       },
+      headers: {
+        'Accept-Language': lang
+      }
     })
     .then((response) => {
+      console.log(lang)
       response.data.results.forEach((el, index) =>
-        renderTariffsCard(el, index, planRows)
+        renderTariffsCard(el, index, planRows, lang)
       );
     })
     .finally(() => removeLoadingTariffs());
@@ -29,11 +33,14 @@ const listParams = {
   limit: 3,
   offset: 0,
 };
-export function getTariffs() {
+export function getTariffs(lang= 'uz') {
   renderLoadingTariffs(plansListRows, 3, `background-color: "#f2f2f2"};`);
   axios
     .get("tarif/", {
       params: listParams,
+      headers: {
+        'Accept-Language': lang
+      }
     })
     .then((response) => {
       response.data.results.forEach((el, index) =>
@@ -41,6 +48,7 @@ export function getTariffs() {
           el,
           index,
           plansListRows,
+          lang,
           `background-color: ${index % 2 === 0 ? "#f2f2f2" : "#06635D"};`
         )
       );
@@ -57,7 +65,7 @@ export function loadMoreTariffs() {
   getTariffs();
 }
 
-function renderTariffsCard(item, index, playground, cardStyle = "") {
+function renderTariffsCard(item, index, playground, lang = 'uz', cardStyle = "") {
   playground.innerHTML += `
         <div class="col-lg-4 col-md-6">
             <div class="bd-pricing ${
@@ -80,9 +88,9 @@ function renderTariffsCard(item, index, playground, cardStyle = "") {
                 </ul>
                 </div>
                 <div class="bd-pricing-btn">
-                    <a href="tarif-details.html?id=${
+                    <a href="tarif-details${lang === 'ru' ? '-ru' : ''}.html?id=${
                       item.id
-                    }" class="theme-btn">Batafsil</a>
+                    }" class="theme-btn">${lang === 'uz' ? 'Batafsil' : 'Подробнее'}</a>
                 </div>
             </div>
         </div>
@@ -143,9 +151,13 @@ function removeLoadingTariffs() {
 
 const preloader = document.getElementById("preloader");
 
-export function getPlansDetails() {
+export function getPlansDetails(lang = 'uz') {
   axios
-    .get(`tarif/${getSingleIdFromUrl()}/`)
+    .get(`tarif/${getSingleIdFromUrl()}/`, {
+      headers: {
+        'Accept-Language': lang
+      }
+    })
     .then((response) => {
       renderTariffSingle(response.data);
     })
@@ -265,13 +277,16 @@ function renderTariffSingle(data) {
     data.transport.body;
 }
 
-export function getSelectPlans() {
+export function getSelectPlans(lang="uz") {
   const applicationTariffs = document.getElementById("application-tariffs");
   axios
     .get("tarif/", {
       params: {
         limit: 100,
       },
+      headers: {
+        'Accept-Language': lang
+      }
     })
     .then((response) => {
       response.data.results.forEach((el) => {

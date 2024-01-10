@@ -4,11 +4,16 @@ import axios from './axios.js'
 
 const gallery = document.getElementById('entrance-slider');
 
-function getData() {
+export function getData(lang = 'uz') {
+    console.log(lang)
     const preloader = document.getElementById('preloader')
-    axios.get('slides/')
+    axios.get('slides/', {
+        headers: {
+            'Accept-Language': lang
+        }
+    })
         .then(function (response) {
-            response.data.forEach((el) => renderEntranceItem(el))
+            response.data.forEach((el) => renderEntranceItem(el, lang))
             mountEntranceSlider()
         }).finally(() => {
         preloader.style.display = 'none'
@@ -71,7 +76,7 @@ function mountEntranceSlider() {
 
 }
 
-function renderEntranceItem(item){
+function renderEntranceItem(item, lang){
     gallery.innerHTML += `
                     <div class="bd-single-slider bd-single-slider-overlay bd-slider-height d-flex align-items-center swiper-slide"
                         data-swiper-autoplay="5000">
@@ -82,7 +87,7 @@ function renderEntranceItem(item){
                                     <div class="bd-slider z-index text-center pt-95">
                                         <h1 class="bd-slider-title mb-40" data-animation="fadeInUp" data-delay=".3s">${item.title}</h1>
                                         <div class="bd-slider-btn" data-animation="fadeInUp" data-delay=".9s">
-                                            <a href="tariffs.html" class="theme-btn">Safar tariflari</a>
+                                            <a href="tariffs.html" class="theme-btn">${lang === 'uz' ? 'Safar tariflari' : 'Тарифы'}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -90,5 +95,3 @@ function renderEntranceItem(item){
                         </div>
                     </div>`
 }
-
-getData()

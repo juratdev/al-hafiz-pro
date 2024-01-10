@@ -70,7 +70,7 @@
                                         <li><a href="contact-ru.html" class="contact">Контакт</a></li>
                                     </ul>
                                 </nav>
-                                <a href="./news-details.html" class="theme-btn btn-lang"
+                                <a href="" class="theme-btn btn-lang news-details-language"
                                     style="padding: 0 12px;line-height: 32px;height: 32px;">Uz</a>
                             </div>
 
@@ -94,7 +94,7 @@
                 <div class="bd-mobile-menu"></div>
                 <div class="contact-infos mb-30">
                     <div class="contact-list mb-30">
-                        <a href="./news-details.html" class="theme-btn" style="height: 40px; line-height: 40px;padding: 0 16px">ru</a>
+                        <a href="" class="theme-btn news-details-language" style="height: 40px; line-height: 40px;padding: 0 16px">ru</a>
                         <h4 style="margin-top: 20px;">Контакт</h4>
 
                         <ul>
@@ -336,8 +336,10 @@
     <script type="module">
         import {getHomePlans} from "./assets/js/api/plans.js";
         import {getNewsDetails} from "./assets/js/api/news.js";
-        getNewsDetails()
-        getHomePlans();
+        import {changeLanguageSingle} from "./assets/js/helpers.js";
+        getNewsDetails('ru')
+        getHomePlans('ru');
+        changeLanguageSingle('news-details', 'news-details-language')
     </script>
 
     <!-- JS here -->

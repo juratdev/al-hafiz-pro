@@ -3,16 +3,19 @@ import { getSingleIdFromUrl, formatDate } from "../helpers.js";
 
 const newsRows = document.getElementById("news-row");
 
-export function getHomeNews() {
+export function getHomeNews(lang = 'uz') {
   renderNewsCardLoading(3, newsRows);
   axios
     .get("news/", {
       params: {
         limit: 3,
       },
+        headers: {
+            'Accept-Language': lang
+        }
     })
     .then((response) => {
-      response.data.results.forEach((el) => renderNewsCard(el, newsRows));
+      response.data.results.forEach((el) => renderNewsCard(el, newsRows, lang));
     })
     .finally(() => {
       removeLoadingCards();
@@ -26,14 +29,17 @@ const listParams = {
   offset: 0,
 };
 
-export function getListNews() {
+export function getListNews(lang=  'uz') {
   renderNewsCardLoading(9, newsListRows);
   axios
     .get("news/", {
       params: listParams,
+        headers: {
+            'Accept-Language': lang
+        }
     })
     .then((response) => {
-      response.data.results.forEach((el) => renderNewsCard(el, newsListRows));
+      response.data.results.forEach((el) => renderNewsCard(el, newsListRows, lang));
       document.getElementById("news-load-more").style.display = !response.data
         .next
         ? "none"
@@ -47,7 +53,7 @@ export function loadMoreNews() {
   getListNews();
 }
 
-function renderNewsCard(item, playground) {
+function renderNewsCard(item, playground, lang) {
   playground.innerHTML += `
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="bd-blog mb-30 h-100 d-flex flex-column">
@@ -59,7 +65,7 @@ function renderNewsCard(item, playground) {
                         <div class="bd-blog-meta mb-15">
                             <ul>
                                 <li>
-                                <a href="news-details.html" id="news-start-time"><i class="flaticon-calendar"></i>21 Feb 2022</a>
+                                <a id="news-start-time"><i class="flaticon-calendar"></i>${formatDate(item.created_at, lang)}</a>
                                 </li>
                             </ul>
                         </div>
@@ -67,7 +73,7 @@ function renderNewsCard(item, playground) {
                     </div>
                     <div class="bd-blog-author d-flex justify-content-end">
                         <div class="bd-blog-author-link">
-                            <a href="news-details.html?id=${item.id}">Batafsil<i class="far fa-arrow-right"></i></a>
+                            <a href="news-details${lang === 'ru' ? '-ru' : ''}.html?id=${item.id}">${lang === 'uz' ? 'Batafsil' : 'Подробнее'}<i class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -114,9 +120,13 @@ function removeLoadingCards() {
   });
 }
 const preloader = document.getElementById("preloader");
-export function getNewsDetails() {
+export function getNewsDetails(lang = 'uz') {
   axios
-    .get(`news/${getSingleIdFromUrl()}/`)
+    .get(`news/${getSingleIdFromUrl()}/`, {
+        headers: {
+            'Accept-Language': lang
+        }
+    })
     .then((response) => {
       const item = response.data;
       document

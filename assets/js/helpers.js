@@ -36,25 +36,48 @@ export function formatMoneyDecimal(number, fix, option) {
     : "0,00";
 }
 
-export function formatDate(date) {
-  const months = [
-    "Yan",
-    "Feb",
-    "Mart",
-    "Apr",
-    "May",
-    "Iyun",
-    "Iyul",
-    "Avg",
-    "Sent",
-    "Okt",
-    "Noy",
-    "Dek",
-  ];
-
+export function formatDate(date, lang) {
+  const months = {
+    uz: [
+      "Yan",
+      "Feb",
+      "Mart",
+      "Apr",
+      "May",
+      "Iyun",
+      "Iyul",
+      "Avg",
+      "Sent",
+      "Okt",
+      "Noy",
+      "Dek",
+    ],
+    ru: [
+      "Янв",
+      "Фев",
+      "Март",
+      "Апр",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Авг",
+      "Сен",
+      "Окт",
+      "Ноя",
+      "Дек",
+    ]
+  }
   const myDate = new Date(date);
   const day = myDate.getDate();
   const month = myDate.getMonth();
   const year = myDate.getFullYear();
-  return `${day} ${months[month]}, ${year}`;
+  return `${day} ${months[lang][month]}, ${year}`;
+}
+
+export function changeLanguageSingle(link, item, lang = 'uz') {
+
+  const links = document.querySelectorAll(`.${item}`);
+  links.forEach((el) => {
+    el.href = `./${link}${lang === 'ru' ? '-ru' : ''}.html?id=${getSingleIdFromUrl()}`;
+  })
 }

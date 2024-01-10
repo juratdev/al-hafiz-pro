@@ -641,7 +641,11 @@
 
     <!--  Data GET methods  -->
     <script src="assets/js/api/application.js"></script>
-    <script type="module" src="assets/js/api/entrance.js"></script>
+    <script src="assets/js/api/entrance.js" type="module"></script>
+    <script type="module">
+        import {getData} from './assets/js/api/entrance.js'
+        getData()
+    </script>
     <script type="module" src="assets/js/api/gallery.js"></script>
     <script type="module">
         import { getHomeNews } from './assets/js/api/news.js';
