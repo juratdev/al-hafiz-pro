@@ -240,7 +240,16 @@ function renderTariffSingle(data, lang) {
   document.getElementById("madinah-hotel-distance").innerText =
     data.Madinah_hotel.distance;
 
+  // Render Makkah hotel stars
+  for (let i = 0; i < data.Makkah_hotel.star; i++) {
+    document.getElementById("makkah-hotel-stars").innerHTML +=  `<i class="fas fa-star" style="color: #e0b580;"> </i>`
+  }
+
   // Render Makkah hotel image
+  document.getElementById("makkah-hotel-logo").src =
+    data.Makkah_hotel.logo;
+  document.getElementById("makkah-hotel-logo").alt =
+      data.Makkah_hotel.name;
   document.getElementById("makkah-hotel-image-1").src =
     data.Makkah_hotel.image1 ?? "assets/img/about/choose-1.1.png";
   document.getElementById("makkah-hotel-image-2").src =
@@ -248,7 +257,17 @@ function renderTariffSingle(data, lang) {
   document.getElementById("makkah-hotel-image-3").src =
     data.Makkah_hotel.image3 ?? "assets/img/about/choose-2.1.png";
 
+
+  // Render Madinah hotel stars
+  for (let i = 0; i < data.Madinah_hotel.star; i++) {
+    document.getElementById("madinah-hotel-stars").innerHTML +=  `<i class="fas fa-star" style="color: #e0b580;"> </i>`
+  }
+
   // Render Madinah hotel image
+  document.getElementById("madinah-hotel-logo").src =
+      data.Madinah_hotel.logo;
+  document.getElementById("madinah-hotel-logo").alt =
+      data.Madinah_hotel.name;
   document.getElementById("madinah-hotel-image-1").src =
     data.Madinah_hotel.image1 ?? "assets/img/about/choose-1.1.png";
   document.getElementById("madinah-hotel-image-2").src =

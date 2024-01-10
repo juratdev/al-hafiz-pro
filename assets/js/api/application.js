@@ -23,8 +23,6 @@ function sendApplication(event) {
     });
 }
 
-const contactForm = document.querySelector("#contact-form");
-contactForm.addEventListener("submit", sendContactForm)
 function sendContactForm(event) {
     event.preventDefault()
     const phoneNumber = event.target.querySelector("#contact-phone-input")

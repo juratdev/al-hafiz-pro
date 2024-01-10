@@ -1,6 +1,7 @@
 (function ($) {
   "use strict";
-  
+
+  var win =  $(window);
   // meanmenu
   $("#bd-mobile-menu").meanmenu({
     meanMenuContainer: ".bd-mobile-menu",
