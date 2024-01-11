@@ -348,7 +348,7 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   height: 30px;
 }
 
-.social-link>div>img {
+.social-link > div > img {
   width: 100%;
 }
 
@@ -369,7 +369,7 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   height: 80px;
 }
 
-.cards-link>div>img {
+.cards-link > div > img {
   width: 100%;
 }
 
@@ -533,6 +533,25 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
 .hotel-images .bd-choose-img-inner-1 {
   margin-right: 0;
 }
+.bd-choose-img-inner-1 {
+  height: 420px;
+}
+.bd-choose-img-inner-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.bd-choose-img-inner-2 {
+  height: 200px;
+}
+.bd-choose-img-inner-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
 
 .bd-portfolio:before {
   pointer-events: none;
@@ -542,10 +561,38 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
   .tariff-transport-main #tariff-transport-title {
     font-size: 16px;
   }
+  .tariff-transport-main #tariff-transport-subtitle {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .bd-section-mini-title {
+    flex-direction: column;
+  }
+  .tariff-transport-main #tariff-transport-title {
+    font-size: 18px;
+  }
+  .tariff-transport-main #tariff-transport-subtitle {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .tariff-transport-main #tariff-transport-title {
+    font-size: 16px;
+  }
+  .tariff-transport-main #tariff-transport-subtitle {
+    font-size: 16px;
+  }
+}
+
+.bd-section-mini-title-img {
+  width: 250px;
 }
 
 .bd-section-mini-title-img img {
-  background-size: contain;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -562,11 +609,11 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
 }
 
 @media only screen and (max-width: 950px) {
-  .bd-package-main-title>h1 {
+  .bd-package-main-title > h1 {
     font-size: 42px;
   }
 
-  .bd-package-main-title>h5 {
+  .bd-package-main-title > h5 {
     font-size: 18px;
   }
 
@@ -760,7 +807,7 @@ footer.heading-bg .bd-copyright-area .bd-copyright p {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, #EEEEEE 25%, #DEDEDE 50%, #EEEEEE 75%);
+  background: linear-gradient(90deg, #eeeeee 25%, #dedede 50%, #eeeeee 75%);
   background-size: 200% 100%;
   animation: loading 2s infinite ease-in-out;
   border-radius: 8px;
